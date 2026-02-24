@@ -15,6 +15,7 @@ For installation, you need `stow` program.
 Mentoined programs:
 - `rofi`
 - `niri`
+- `hypridle`
 - `alacritty`
 - `htop`
 - `kitty`
