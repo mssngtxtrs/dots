@@ -1,0 +1,10 @@
+hotkey-overlay {
+    skip-at-startup
+    hide-not-bound
+}
+
+clipboard {
+    disable-primary
+}
+
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"

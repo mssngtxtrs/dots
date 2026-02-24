@@ -1,0 +1,8 @@
+include "environment.kdl"
+include "autostart.kdl"
+include "style.kdl"
+// include "outputs.kdl"
+include "animations.kdl"
+include "input.kdl"
+include "rules.kdl"
+include "other.kdl"

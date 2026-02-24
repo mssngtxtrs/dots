@@ -1,0 +1,45 @@
+* {
+    font-family: "Adwaita Sans", sans-serif;
+    font-size: 14px;
+}
+
+window {
+    background-color: rgba(29, 32, 33, 0.89);
+}
+
+button {
+    background-color: #32302f;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 96px;
+    color: #ebdbb2;
+    margin: 1px;
+    transition: none;
+    box-shadow: none;
+    min-width: 196px;
+    min-height: 196px;
+    border-radius: 15px;
+    border: none;
+}
+
+button:hover, button:active, button:focus {
+    background-color: #32302f;
+    border: 1px solid #ebdbb2;
+    margin: 0;
+}
+
+#shutdown {
+    background-image: image(url("/home/mssngtxtrs/.config/wlogout/assets/shutdown.png"));
+}
+
+#reboot {
+    background-image: image(url("/home/mssngtxtrs/.config/wlogout/assets/reboot.png"));
+}
+
+#suspend {
+    background-image: image(url("/home/mssngtxtrs/.config/wlogout/assets/suspend.png"));
+}
+
+#logout {
+    background-image: image(url("/home/mssngtxtrs/.config/wlogout/assets/logout.png"));
+}

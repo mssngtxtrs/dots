@@ -1,0 +1,16 @@
+spawn-sh-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+
+spawn-sh-at-startup "systemctl --user start kanshi"
+spawn-sh-at-startup "systemctl --user start waybar"
+spawn-sh-at-startup "systemctl --user start swaync"
+spawn-sh-at-startup "systemctl --user start hypridle.service"
+
+spawn-sh-at-startup "swayosd-server"
+spawn-sh-at-startup "swww-daemon & disown; swww restore; swaybg --image \"/home/mssngtxtrs/.cache/wallpapers/overview/$(swww query | grep -o '[^/]*$' 2>&1 | head -n 1)\" --mode fill"
+
+spawn-sh-at-startup "kdeconnectd && kdeconnect-indicator"
+
+spawn-sh-at-startup "wl-paste --type text --watch cliphist store"
+spawn-sh-at-startup "wl-paste --type image --watch cliphist store"
+
+spawn-sh-at-startup "xhost +"

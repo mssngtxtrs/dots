@@ -1,0 +1,9 @@
+@import "search.rasi"
+
+mainbox {
+    children: [ inputbar, listview ];
+}
+
+inputbar {
+    children: [ prompt, textbox-prompt-colon, entry ];
+}

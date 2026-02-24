@@ -1,0 +1,59 @@
+@import "launcher.rasi"
+
+configuration {
+    modes: [ window, run, calc ];
+
+    display-window: "󱂬";
+    display-run: "󰜎";
+    display-calc: "󰃬";
+}
+
+window {
+    font: 'Adwaita Mono 14';
+}
+
+mainbox {
+    children: [ inputbar, message, listview, mode-switcher ];
+}
+
+listview {
+    columns: 1;
+}
+
+entry {
+    font: 'Adwaita Mono 14';
+}
+
+element {
+    background-color: #1d2021;
+    color: #ebdbb2;
+    orientation: horizontal;
+    children: [ element-text  ];
+    padding: 4px 8px;
+    spacing: 8px;
+    border-radius: 8px;
+}
+
+element-text {
+    font: 'Adwaita Mono 14';
+    padding: 0;
+    horizontal-align: 0;
+}
+
+mode-switcher {
+    border: none;
+    border-radius: 8px;
+    padding: 8px;
+    margin: 8px;
+    spacing: 8px;
+}
+
+button {
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+button selected.normal {
+    background-color: #689d6a;
+    color: #282828;
+}

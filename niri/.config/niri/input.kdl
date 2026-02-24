@@ -1,0 +1,221 @@
+input {
+    keyboard {
+        xkb {
+            layout "us,ru"
+            options "grp:win_space_toggle,compose:ralt,ctrl:nocaps"
+        }
+
+        // numlock
+    }
+
+    touchpad {
+        // off
+        dwt
+        tap
+        natural-scroll
+        click-method "clickfinger"
+    }
+}
+
+gestures {
+    hot-corners {
+        off
+    }
+}
+
+binds {
+    Mod+Shift+Slash { show-hotkey-overlay; }
+
+    Mod+T hotkey-overlay-title="Terminal" { spawn "kitty"; }
+    Mod+D hotkey-overlay-title="Application menu" { spawn-sh "pgrep -x rofi >/dev/null 2>&1 && killall rofi || rofi -show drun -config launcher.rasi"; }
+    Ctrl+Alt+Delete hotkey-overlay-title="Power menu" { spawn-sh "pgrep -x wlogout >/dev/null 2>&1 && killall wlogout || wlogout -l ~/.config/wlogout/layout -C ~/.config/wlogout/style.css -b 4 -c 16 "; }
+    Mod+V hotkey-overlay-title="Clipboard" { spawn-sh "pgrep -x rofi >/dev/null 2>&1 && killall rofi || cliphist list | rofi -window-title \"Clipboard\" -dmenu | cliphist decode | wl-copy"; }
+    Mod+Alt+Tab hotkey-overlay-title="Window switch" { spawn-sh "pgrep -x rofi >/dev/null 2>&1 && killall rofi || rofi -show window -config search.rasi"; }
+    Mod+X hotkey-overlay-title="Wallpaper change" { spawn-sh "pgrep -x rofi >/dev/null 2>&1 && killall rofi || rofi -show wallpaper -config launcher.rasi"; }
+    Mod+Q hotkey-overlay-title="Open file" { spawn-sh "pgrep -x rofi >/dev/null 2>&1 && killall rofi || rofi -show filebrowser -config launcher.rasi"; }
+    Mod+S hotkey-overlay-title="Calculator" { spawn-sh "pgrep -x rofi >/dev/null 2>&1 && killall rofi || rofi -show calc -config search.rasi"; }
+    Mod+B hotkey-overlay-title="Bluetooth" { spawn-sh "pgrep -x blueman-manager >/dev/null 2>&1 && killall blueman-manager || blueman-manager"; }
+    Mod+N hotkey-overlay-title="Network" { spawn-sh "pgrep -x rofi >/dev/null 2>&1 && killall rofi || networkmanager_dmenu"; }
+    Mod+R hotkey-overlay-title="Runner" { spawn-sh "pgrep -x rofi >/dev/null 2>&1 && killall rofi || rofi -show run -config search.rasi"; }
+    Mod+E hotkey-overlay-title="File manager" { spawn-sh "nautilus --new-window"; }
+    Mod+P hotkey-overlay-title="Suspend" { spawn-sh "systemctl suspend -i"; }
+
+    // Mod+Ctrl+Z { spawn-sh "niri msg pick-window > ~/picked.txt"; }
+
+    Mod+Shift+C hotkey-overlay-title="Color picker" { spawn-sh "hyprpicker | cliphist store"; }
+
+    Mod+M hotkey-overlay-title="Kill application" { spawn-sh "kill -KILL $(niri msg pick-window | sed -n -e 's/^.*PID: //p')"; }
+
+    Mod+W hotkey-overlay-title="Notifications" { spawn-sh "swaync-client -t"; }
+
+    Mod+F1 hotkey-overlay-title="Toggle game mode" { spawn-sh "~/.config/niri/gamemode.sh"; }
+
+    Mod+F2 hotkey-overlay-title="Toggle internal monitor" { spawn-sh "~/.config/niri/edp-disable.sh"; }
+    Mod+Alt+F2 hotkey-overlay-title="Toggle external monitor" { spawn-sh "~/.config/niri/hdmi-disable.sh"; }
+
+    Mod+F3 hotkey-overlay-title="Reset position of internal monitor" { spawn-sh "~/.config/niri/position-reset.sh"; }
+
+    Control+Shift+Escape hotkey-overlay-title="Task manager" { spawn-sh "pgrep -x htop > /dev/null 2>&1 && killall htop || kitty --class htop -e htop"; }
+
+    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "swayosd-client --monitor $(niri msg -j focused-output | jq -r '.name') --output-volume 5"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "swayosd-client --monitor $(niri msg -j focused-output | jq -r '.name') --output-volume -5"; }
+    XF86AudioMute        allow-when-locked=true { spawn-sh "swayosd-client --monitor $(niri msg -j focused-output | jq -r '.name') --output-volume mute-toggle"; }
+    XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+
+    XF86MonBrightnessUp allow-when-locked=true { spawn-sh "swayosd-client --monitor $(niri msg -j focused-output | jq -r '.name') --brightness +5"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn-sh "swayosd-client --monitor $(niri msg -j focused-output | jq -r '.name') --brightness -5"; }
+
+    XF86AudioPrev           hotkey-overlay-title="Previous track"   { spawn-sh "eplayerctl previous"; }
+    XF86SelectiveScreenshot hotkey-overlay-title="Previous track"   { spawn-sh "eplayerctl previous"; }
+    XF86AudioNext           hotkey-overlay-title="Next track"       { spawn-sh "eplayerctl next"; }
+    XF86LaunchB             hotkey-overlay-title="Next track"       { spawn-sh "eplayerctl next"; }
+    XF86Assistant           hotkey-overlay-title="Play/pause"       { spawn-sh "eplayerctl play-pause"; }
+    XF86AudioPlay           hotkey-overlay-title="Play"             { spawn-sh "eplayerctl play"; }
+    XF86AudioStop           hotkey-overlay-title="Stop"             { spawn-sh "eplayerctl pause"; }
+
+    Mod+Tab repeat=true { toggle-overview; }
+    // Alt+Tab { next-window; }
+
+    Alt+F4 repeat=false { close-window; }
+
+    // Mod+Left  { focus-column-left; }
+    // Mod+Down  { focus-window-down; }
+    // Mod+Up    { focus-window-up; }
+    // Mod+Right { focus-column-right; }
+    Mod+H     { focus-column-left; }
+    Mod+J     { focus-window-down; }
+    Mod+K     { focus-window-up; }
+    Mod+L     { focus-column-right; }
+
+    // Mod+Alt+Left  { move-column-left; }
+    // Mod+Alt+Down  { move-window-down; }
+    // Mod+Alt+Up    { move-window-up; }
+    // Mod+Alt+Right { move-column-right; }
+    Mod+Alt+H     { move-column-left; }
+    Mod+Alt+J     { move-window-down; }
+    Mod+Alt+K     { move-window-up; }
+    Mod+Alt+L     { move-column-right; }
+
+    Mod+Home { focus-column-first; }
+    Mod+End  { focus-column-last; }
+    Mod+Alt+Home { move-column-to-first; }
+    Mod+Alt+End  { move-column-to-last; }
+
+    // Mod+Shift+Left  { focus-monitor-left; }
+    // Mod+Shift+Down  { focus-monitor-down; }
+    // Mod+Shift+Up    { focus-monitor-up; }
+    // Mod+Shift+Right { focus-monitor-right; }
+    Mod+Shift+H     { focus-monitor-left; }
+    Mod+Shift+J     { focus-monitor-down; }
+    Mod+Shift+K     { focus-monitor-up; }
+    Mod+Shift+L     { focus-monitor-right; }
+
+    // Mod+Shift+Alt+Left  { move-column-to-monitor-left; }
+    // Mod+Shift+Alt+Down  { move-column-to-monitor-down; }
+    // Mod+Shift+Alt+Up    { move-column-to-monitor-up; }
+    // Mod+Shift+Alt+Right { move-column-to-monitor-right; }
+    Mod+Shift+Alt+H     { move-column-to-monitor-left; }
+    Mod+Shift+Alt+J     { move-column-to-monitor-down; }
+    Mod+Shift+Alt+K     { move-column-to-monitor-up; }
+    Mod+Shift+Alt+L     { move-column-to-monitor-right; }
+
+    Mod+Ctrl+J         { focus-workspace-down; }
+    Mod+Ctrl+K         { focus-workspace-up; }
+    Mod+Shift+Ctrl+J         { move-column-to-workspace-down; }
+    Mod+Shift+Ctrl+K         { move-column-to-workspace-up; }
+
+    // Mod+Shift+Page_Down { move-workspace-down; }
+    // Mod+Shift+Page_Up   { move-workspace-up; }
+    // Mod+Shift+U         { move-workspace-down; }
+    // Mod+Shift+I         { move-workspace-up; }
+
+    // Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
+    // Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
+    // Mod+Ctrl+WheelScrollDown cooldown-ms=150 { move-column-to-workspace-down; }
+    // Mod+Ctrl+WheelScrollUp   cooldown-ms=150 { move-column-to-workspace-up; }
+
+    // Mod+WheelScrollRight      { focus-column-right; }
+    // Mod+WheelScrollLeft       { focus-column-left; }
+    // Mod+Ctrl+WheelScrollRight { move-column-right; }
+    // Mod+Ctrl+WheelScrollLeft  { move-column-left; }
+
+    // Mod+Shift+WheelScrollDown      { focus-column-right; }
+    // Mod+Shift+WheelScrollUp        { focus-column-left; }
+    // Mod+Ctrl+Shift+WheelScrollDown { move-column-right; }
+    // Mod+Ctrl+Shift+WheelScrollUp   { move-column-left; }
+
+    Mod+Ctrl+1 { focus-workspace 1; }
+    Mod+Ctrl+2 { focus-workspace 2; }
+    Mod+Ctrl+3 { focus-workspace 3; }
+    Mod+Ctrl+4 { focus-workspace 4; }
+    Mod+Ctrl+5 { focus-workspace 5; }
+    Mod+Ctrl+6 { focus-workspace 6; }
+    Mod+Ctrl+7 { focus-workspace 7; }
+    Mod+Ctrl+8 { focus-workspace 8; }
+    Mod+Ctrl+9 { focus-workspace 9; }
+    Mod+Alt+1 { move-column-to-workspace 1; }
+    Mod+Alt+2 { move-column-to-workspace 2; }
+    Mod+Alt+3 { move-column-to-workspace 3; }
+    Mod+Alt+4 { move-column-to-workspace 4; }
+    Mod+Alt+5 { move-column-to-workspace 5; }
+    Mod+Alt+6 { move-column-to-workspace 6; }
+    Mod+Alt+7 { move-column-to-workspace 7; }
+    Mod+Alt+8 { move-column-to-workspace 8; }
+    Mod+Alt+9 { move-column-to-workspace 9; }
+
+    Mod+BracketLeft  { consume-or-expel-window-left; }
+    Mod+BracketRight { consume-or-expel-window-right; }
+
+    Mod+Comma  { consume-window-into-column; }
+    Mod+Period { expel-window-from-column; }
+
+    // Mod+R { switch-preset-column-width; }
+    // Mod+Shift+R { switch-preset-window-height; }
+    // Mod+Ctrl+R { reset-window-height; }
+    Mod+Up { maximize-column; }
+    Mod+F10 { fullscreen-window; }
+    Mod+F11 { maximize-window-to-edges; }
+
+    Mod+Ctrl+F { expand-column-to-available-width; }
+
+    Mod+C { center-column; }
+
+    Mod+Ctrl+C { center-visible-columns; }
+
+    Mod+Minus { set-column-width "-10%"; }
+    Mod+Equal { set-column-width "+10%"; }
+
+    Mod+Shift+Minus { set-window-height "-10%"; }
+    Mod+Shift+Equal { set-window-height "+10%"; }
+
+    Mod+F       { toggle-window-floating; }
+    // Mod+Shift+V { switch-focus-between-floating-and-tiling; }
+
+    // Mod+W { toggle-column-tabbed-display; }
+
+    Mod+Shift+S { screenshot; }
+    Mod+Control+S { screenshot-screen; }
+    Mod+Alt+S { screenshot-window; }
+
+    // Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
+
+    // Mod+Shift+E { quit; }
+
+    Mod+Shift+P { power-off-monitors; }
+
+    Mod+1 hotkey-overlay-title="Zen" { spawn-sh "gio launch ~/.local/share/applications/zen.desktop"; }
+
+    Mod+2 hotkey-overlay-title="Telegram" { spawn-sh "gio launch ~/.local/share/applications/org.telegram.desktop.desktop"; }
+
+    Mod+3 hotkey-overlay-title="Spotify" { spawn-sh "gio launch /usr/share/applications/spotify-launcher.desktop"; }
+
+    Mod+4 hotkey-overlay-title="Anytype" { spawn-sh "gio launch ~/.local/share/applications/anytype.desktop"; }
+
+    Mod+5 hotkey-overlay-title="OnlyOffice" { spawn-sh "gio launch /usr/share/applications/onlyoffice-desktopeditors.desktop NewDocument"; }
+
+    Mod+6 hotkey-overlay-title="Steam" { spawn-sh "gio launch /usr/share/applications/steam.desktop"; }
+
+    Mod+7 hotkey-overlay-title="Zed" { spawn-sh "gio launch ~/.local/share/applications/dev.zed.Zed.desktop"; }
+
+    Mod+0 hotkey-overlay-title="Throne" { spawn-sh "gio launch /usr/share/applications/Throne.desktop"; }
+}

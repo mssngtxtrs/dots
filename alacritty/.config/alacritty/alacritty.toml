@@ -1,0 +1,48 @@
+[window]
+decorations_theme_variant = "Dark"
+
+[font]
+normal = { family = "Adwaita Mono" }
+size = 11
+
+# Colors (Gruvbox dark)
+
+# Default colors
+[colors.primary]
+# hard contrast background = = '#1d2021'
+background = '#1d2021'
+# soft contrast background = = '#32302f'
+foreground = '#ebdbb2'
+
+# Normal colors
+[colors.normal]
+black   = '#282828'
+red     = '#cc241d'
+green   = '#98971a'
+yellow  = '#d79921'
+blue    = '#458588'
+magenta = '#b16286'
+cyan    = '#689d6a'
+white   = '#a89984'
+
+# Bright colors
+[colors.bright]
+black   = '#928374'
+red     = '#fb4934'
+green   = '#b8bb26'
+yellow  = '#fabd2f'
+blue    = '#83a598'
+magenta = '#d3869b'
+cyan    = '#8ec07c'
+white   = '#ebdbb2'
+
+# [terminal]
+# shell = "tmux"
+
+[keyboard]
+bindings = [
+    {key = "+", mods = "Control | Shift | Alt", action = "IncreaseFontSize"},
+    {key = "_", mods = "Control | Shift | Alt", action = "DecreaseFontSize"},
+    {key = ")", mods = "Control | Shift | Alt", action = "ResetFontSize"},
+    {key = "V", mods = "Control | Shift | Alt", action = "ToggleViMode"},
+]

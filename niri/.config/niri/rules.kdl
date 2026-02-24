@@ -1,0 +1,110 @@
+layer-rule {
+    match namespace="^wallpaper$"
+    place-within-backdrop true
+}
+
+window-rule {
+    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+    match app-id=r#"^org\.gnome\.World\.Secrets$"#
+
+    block-out-from "screen-capture"
+}
+
+window-rule {
+    match app-id="^zen$"
+    match app-id="^org.telegram.desktop$"
+    match app-id="^steam$"
+
+    open-maximized true
+}
+
+window-rule {
+    match app-id="^gamescope$"
+
+    open-fullscreen true
+}
+
+window-rule {
+    match app-id="^blender$"
+    match app-id="^org.inkscape.Inkscape$"
+
+    open-maximized true
+    open-maximized-to-edges false
+}
+
+window-rule {
+    match app-id="^zen$" title="^Picture-in-Picture$"
+    match app-id="^zen$" title="Extension: .*"
+    match app-id="^PortProton$"
+    match app-id="^org.kde.kdeconnect.daemon"
+    match app-id="^com.saivert.pwvucontrol$"
+    match app-id="^blueman-manager$"
+    match app-id="^org.gnome.NautilusPreviewer$"
+    match app-id="^app.drey.Dialect$"
+    match app-id="^htop$"
+    match app-id="^system-update$"
+    match app-id="^cache-cleaning$"
+    match title="^ballin$"
+
+    exclude app-id="^dev.zed.Zed$"
+
+    open-floating true
+}
+
+window-rule {
+    match app-id="^com.saivert.pwvucontrol$"
+    match app-id="^blueman-manager$"
+
+    // default-column-width { fixed 800; }
+    // default-window-height { fixed 600; }
+    // default-floating-position x=8 y=8 relative-to="top-right"
+
+    // geometry-corner-radius 11
+
+    default-column-width { fixed 560; }
+    default-window-height { proportion 1.0; }
+    default-floating-position x=0 y=0 relative-to="top-right"
+
+    border {
+        off
+    }
+
+    focus-ring {
+        off
+    }
+
+    geometry-corner-radius 0
+}
+
+window-rule {
+    match app-id="^zen$" title="^Picture-in-Picture$"
+
+    min-width 500
+
+    default-floating-position x=8 y=8 relative-to="bottom-right"
+    geometry-corner-radius 11
+}
+
+window-rule {
+    match app-id="spotify"
+    match app-id="^dev.zed.Zed$"
+
+    default-column-width {
+        proportion 0.66667
+    }
+}
+
+window-rule {
+    match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
+
+    border {
+        off
+    }
+
+    focus-ring {
+        off
+    }
+
+    geometry-corner-radius 0
+    default-floating-position x=0 y=0 relative-to="bottom-right"
+}

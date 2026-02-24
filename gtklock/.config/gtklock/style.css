@@ -1,0 +1,72 @@
+* {
+    color: #ebdbb2;
+}
+
+window {
+    background-image: url('/usr/share/backgrounds/default.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #1d2021;
+}
+
+#window-box {
+    margin-right: 1000px;
+    padding: 48px 64px;
+    border-color: transparent;
+    border-radius: 15px;
+    background-color: #1d2021;
+}
+
+#message-revealer {
+    background: #ffffff;
+}
+
+#clock-label {
+    font-size: 96px;
+}
+
+#date-label {
+    font-size: 24px;
+}
+
+#input-label {
+    color: transparent;
+    margin-right: -200px;
+}
+
+#input-field {
+    box-shadow: none;
+    border-color: transparent;
+    border-radius: 8px;
+    background: #282828;
+    margin-top: 40px;
+    -gtk-secondary-caret-color: transparent;
+    caret-color: transparent;
+}
+
+#unlock-button {
+    box-shadow: none;
+    border-color: transparent;
+    border-radius: 8px;
+    background: #282828;
+    color: #ebdbb2;
+    -gtk-secondary-caret-color: transparent;
+    caret-color: transparent;
+}
+
+#unlock-button:hover {
+    background: #3c3836;
+}
+
+#unlock-button:active {
+    background: #1d2021;
+}
+
+#warning-label {
+    color: #d65d0e;
+}
+
+#error-label {
+    color: #cc241d;
+}

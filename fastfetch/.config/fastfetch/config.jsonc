@@ -1,0 +1,86 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+    "logo": {
+        "type": "small",
+        // "source": "arch",
+        "color": {
+            "1": "cyan",
+            "2": "white"
+        },
+        // "width": 65,
+        // "height": 35,
+        "padding": {
+            "top": 1,
+            "left": 1,
+            "right": 2,
+            "bottom": 1
+        }
+    },
+    "display": {
+        "separator": "",
+        "key": {
+            "width": 4,
+            "type": "icon"
+        },
+        "color": {
+            "keys": "cyan",
+            "title": "cyan"
+        }
+    },
+    "modules": [
+        "break",
+          
+        "title",
+    
+        "break",
+    
+        {
+            "type": "custom",
+            "format": "┌― System info ――――――――――――――――――――――――――――――┐"
+        },
+        "os",
+        "host",
+        "kernel",
+        "uptime",
+        {
+            "type": "custom",
+            "format": "└――――――――――――――――――――――――――――――――――――――――――――┘"
+        },
+    
+        "break",
+    
+        {
+            "type": "custom",
+            "format": "┌― Environment info ―――――――――――――――――――――――――┐"
+        },
+        "de",
+        "wm",
+        "shell",
+        "terminal",
+        {
+            "type": "custom",
+            "format": "└――――――――――――――――――――――――――――――――――――――――――――┘"
+        },
+    
+        "break",
+    
+        {
+            "type": "custom",
+            "format": "┌― Hardware info ――――――――――――――――――――――――――――┐"
+        },
+        "cpu",
+        "gpu",
+        "memory",
+        "swap",
+        {
+            "type": "custom",
+            "format": "└――――――――――――――――――――――――――――――――――――――――――――┘"
+        },
+    
+        "break",
+    
+        "colors",
+
+        "break"
+    ]
+}

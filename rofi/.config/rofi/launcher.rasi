@@ -1,0 +1,105 @@
+@import "default.rasi"
+
+configuration {
+    modes: [ drun, wallpaper, filebrowser ];
+    modi: "drun,wallpaper:~/.config/rofi/wallpaper-changer.sh,filebrowser";
+    icon-theme: 'Gruvbox-Plus-Dark';
+}
+
+window {
+    border-color: #1d2021;
+    location: west;
+    width: 560px;
+    height: 100%;
+    border-radius: 0;
+    x-offset: 0;
+    y-offset: 0;
+}
+
+mainbox {
+    children: [ inputbar, message, listview, custom-exit ];
+}
+
+message {
+    border: none;
+    margin: 8px;
+    padding: 8px 8px 0 8px;
+    background-color: #1d2021;
+    color: #ebdbb2;
+}
+
+listview {
+    columns: 4;
+    fixed-columns: true;
+    flow: horizontal;
+    spacing: 8px;
+    padding: 8px 8px 8px 8px;
+}
+
+inputbar {
+    padding: 12px;
+    margin: 8px 8px 0 8px;
+    children: [ entry ];
+}
+
+entry {
+    placeholder: 'Search...';
+    font: 'Adwaita Sans 14';
+}
+
+element {
+    orientation: vertical;
+    children: [ element-icon, element-text  ];
+    padding: 0;
+    spacing: 0;
+}
+
+element-icon {
+    size: 80px;
+    padding: 12px 12px 6px 12px;
+}
+
+element-text {
+    horizontal-align: 0.5;
+    padding: 12px;
+    font: 'Adwaita Sans 14px';
+}
+
+custom-exit {
+    children: [ icon-launcher, icon-wallpaper, icon-filebrowser ];
+    orientation: horizontal;
+    border: none;
+    border-radius: 8px;
+    padding: 8px;
+    margin: 8px;
+    spacing: 8px;
+    expand: false;
+    background-color: #282828;
+}
+
+icon-launcher, icon-wallpaper, icon-filebrowser {
+    padding: 4px 8px;
+    border-radius: 8px;
+    size: 16;
+    vertical-align: 0.5;
+}
+
+icon-launcher selected.normal, icon-wallpaper selected.normal, icon-filebrowser selected.normal {
+    background-color: #689d6a;
+    color: #282828;
+}
+
+icon-launcher {
+    filename: "view-grid-symbolic";
+    action: "kb-custom-1";
+}
+
+icon-wallpaper {
+    filename: "image-symbolic";
+    action: "kb-custom-2";
+}
+
+icon-filebrowser {
+    filename: "folder-symbolic";
+    action: "kb-custom-3";
+}

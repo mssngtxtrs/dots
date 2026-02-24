@@ -1,0 +1,117 @@
+configuration {
+    kb-custom-1: "Alt+1";
+    kb-custom-2: "Alt+2";
+    kb-custom-3: "Alt+3";
+}
+
+window {
+    border-color: #ebdbb2;
+    border: 1px solid;
+    border-radius: 16px;
+    font: 'Adwaita Mono 14';
+    margin: 0;
+    padding: 0;
+    location: south west;
+    x-offset: 16px;
+    y-offset: -16px;
+    width: 50%;
+    height: 50%;
+}
+
+mainbox {
+    background-color: #1d2021;
+    spacing: 0;
+}
+
+listview {
+    spacing: 4px;
+    background-color: #1d2021;
+    text-color: #ebdbb2;
+    padding: 0 8px 8px 8px;
+    border: none;
+    scrollbar-width: 8px;
+}
+
+scrollbar {
+    width: 12px;
+    handle-width: 6px;
+    handle-color: #ebdbb2;
+    handle-rounded-corners: true;
+    padding: 0;
+    spacing: 0;
+}
+
+inputbar {
+    padding: 8px;
+    margin: 8px;
+    border-radius: 8px;
+    border: none;
+    background-color: #282828;
+    text-color: #ebdbb2;
+
+    children: [ prompt, textbox-prompt-colon, entry ];
+}
+
+textbox {
+    background-color: transparent;
+}
+
+prompt {
+    background-color: transparent;
+    color: #ebdbb2;
+    expand: false;
+}
+
+textbox-prompt-colon {
+    background-color: transparent;
+    color: #ebdbb2;
+    str: "|";
+    margin: 0 4px;
+    expand: false;
+}
+
+entry {
+    background-color: #282828;
+    text-color: #ebdbb2;
+    placeholder: 'Type here...';
+    font: 'Adwaita Mono 14';
+}
+
+element {
+    background-color: #1d2021;
+    color: #ebdbb2;
+    orientation: horizontal;
+    children: [ element-text  ];
+    padding: 4px 8px;
+    spacing: 8px;
+    border-radius: 8px;
+}
+
+element-text {
+    background-color: transparent;
+    padding: 0;
+}
+
+element-icon {
+    background-color: transparent;
+}
+
+element normal.normal, element alternate.normal {
+    background-color: #1d2021;
+    text-color: #ebdbb2;
+}
+
+element selected.normal {
+    background-color: #ebdbb2;
+    color: #282828;
+}
+
+element normal.active, element alternate.active {
+    background-color: #689d6a;
+    color: #282828;
+}
+
+element selected.active {
+    background-color: #89b482;
+    color: #282828;
+}

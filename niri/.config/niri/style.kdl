@@ -1,0 +1,92 @@
+prefer-no-csd
+
+layout {
+    gaps 4
+
+    center-focused-column "never"
+
+    // background-color "#282828"
+    background-color "transparent"
+
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+    }
+    
+    default-column-width { proportion 0.5; }
+
+    focus-ring {
+        // off
+        on 
+
+        width 1 
+
+        active-color "#00000040";
+    }
+
+    border {
+        // off
+        on
+
+        width 1 
+
+        active-color "#ebdbb2"
+        inactive-color "#928374"
+        urgent-color "#d65d0e"
+    }
+
+    insert-hint {
+        color "#689d6a80"
+    }
+}
+
+window-rule {
+    geometry-corner-radius 15
+    clip-to-geometry true
+    draw-border-with-background false
+    // open-maximized-to-edges false
+    // opacity 0.89
+}
+
+window-rule {
+    match is-focused=true
+
+    // opacity 1.0
+}
+
+cursor {
+    xcursor-theme "Adwaita"
+    xcursor-size 24
+
+    hide-when-typing
+}
+
+overview {
+    backdrop-color "#1d2021"
+    // zoom 0.5
+    zoom 0.67
+    // zoom 0.75
+    workspace-shadow {
+        // off
+        on
+    }
+}
+
+recent-windows {
+    debounce-ms 0
+    open-delay-ms 0
+
+    highlight {
+        active-color "#ebdbb2"
+        urgent-color "#d65d0e"
+
+        padding 15
+        corner-radius 15
+    }
+
+    previews {
+        max-height 1080
+        max-scale 0.4
+    }
+}

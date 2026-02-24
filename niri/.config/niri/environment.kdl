@@ -1,0 +1,8 @@
+environment {
+    QT_QPA_PLATFORM "wayland;xcb"
+    QT_QPA_PLATFORMTHEME "qt6ct"
+    GDK_BACKEND "wayland,x11,*"
+    ELECTRON_OZONE_PLATFORM_HINT "wayland"
+    XCURSOR_SIZE "24"
+    XDG_CONFIG_HOME "/home/mssngtxtrs/.config"
+}
