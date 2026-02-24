@@ -1,2 +1,5 @@
 #!/usr/bin/env bash
+
+# Taken from https://github.com/altdesktop/playerctl/issues/143#issuecomment-543206352
+
 playerctl --player=$((cat ~/.config/player-priority 2>/dev/null; echo; playerctl -l)|awk '!x[$0]++'|paste -sd,) $*
