@@ -28,5 +28,6 @@ Mentoined programs:
 - `MangoHud`
 - `spotify-launcher`
 - `kanshi`
+- `starship`
 
 Also, `eplayerctl` script is required. It is stored in 'bin/eplayerctl' directory and is automatically linked into '~/.local/bin' when using `install.sh` script.
