@@ -1,0 +1,184 @@
+{
+  "niri/language": {
+    "format": "{}",
+    "format-en": "en",
+    "format-ru": "ru"
+  },
+
+  "niri/window": {
+    "format": "{title}",
+    "tooltip": false
+  },
+
+  "niri/workspaces": {
+    "format": ""
+  },
+
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    },
+    "tooltip-format-activated": "Active",
+    "tooltip-format-deactivated": "Inactive"
+  },
+
+  "tray": {
+    "icon-size": 15,
+    "spacing": 1
+  },
+
+  "custom/separator": {
+    "format": "|",
+    "tooltip": false
+  },
+
+  "custom/tray-revealer": {
+    "format": "",
+    "tooltip": false
+  },
+
+  "clock": {
+    "format": "{:%A, %d %B, %H:%M}",
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "calendar": {
+      "mode": "year",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#ebdbb2'><b>{}</b></span>",
+        "days": "<span color='#ebdbb2'><b>{}</b></span>",
+        "weeks": "<span color='#a89984'><b>{}</b></span>",
+        "weekdays": "<span color='#a89984'><b>{}</b></span>",
+        "today": "<span color='#cc241d'><b>{}</b></span>"
+      }
+    },
+    "actions": {
+      "on-click-middle": "mode",
+      "on-scroll-up": "tz_up",
+      "on-scroll-down": "tz_down",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    },
+    "on-click": "swaync-client -t -sw"
+  },
+
+  "cpu": {
+    "format": " {usage}%",
+    "tooltip": true,
+    "on-click": "pgrep -x htop > /dev/null 2>&1 && killall htop || kitty --class htop -e htop",
+    "interval": 5
+  },
+
+  "memory": {
+    "format": " {used:.1f} GiB",
+    "tooltip-format": "Memory: {used:.2f} / {total:.2f} GiB\nSwap: {swapUsed:.2f} / {swapTotal:.2f} GiB",
+    "on-click": "pgrep -x htop > /dev/null 2>&1 && killall htop || kitty --class htop -e htop",
+    "interval": 5
+  },
+
+  "temperature": {
+    "critical-threshold": 95,
+    "format": " {temperatureC}°C",
+    "tooltip-format": "Temperature: {temperatureC}°C",
+    "on-click": "pgrep -x htop > /dev/null 2>&1 && killall htop || kitty --class htop -e htop",
+    "interval": 5
+  },
+
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "interval": 2,
+    "format": "{capacity}% {icon}",
+    "format-full": "{capacity}% {icon}",
+    "format-charging": "{capacity}% {icon} ",
+    "format-plugged": "{capacity}% {icon} ",
+    "format-icons": ["", "", "", "", ""],
+    "tooltip-format-charging": "Connected, charging, {time} remaining\nBattery health: {health}%",
+    "tooltip-format-plugged": "Connected, not charging\nBattery health: {health}%",
+    "tooltip-format-discharging": "Disconnected, {time} remaining\nBattery health: {health}%",
+    "on-click": "pgrep -x wlogout >/dev/null 2>&1 && killall wlogout || wlogout -l ~/.config/wlogout/layout -C ~/.config/wlogout/style.css -b 4 -c 16 -m 400"
+  },
+
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+    }
+  },
+
+  "network": {
+    "format-wifi": "{icon}",
+    "format-ethernet": "",
+    "format-disabled": "⚠",
+    "tooltip-format": " {ifname} via {gwaddr}",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)  {ifname} via {gwaddr}",
+    "tooltip-format-ethernet": "{ipaddr}/{cidr}  {ifname} via {gwaddr}",
+    "tooltip-format-disconnected": "Disconnected",
+    "tooltip-format-disabled": "Disabled",
+    "format-disconnected": "",
+    "format-icons": ["󰤟", "󰤢", "󰤥", "󰤨"],
+    "on-click": "pgrep -x rofi && killall rofi || networkmanager_dmenu",
+    "on-click-right": "sh -c '[[ $(nmcli radio wifi) =~ \"enabled\" ]] && nmcli radio wifi off || nmcli radio wifi on'"
+  },
+
+  "pulseaudio": {
+    "format": "{icon}",
+    "format-bluetooth": "{icon}",
+    "format-bluetooth-muted": "",
+    "format-muted": "",
+    "format-icons": {
+      "default": ["", "", ""]
+    },
+    "tooltip-format": "Volume: {volume}%\n{desc}",
+    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-click": "pwvucontrol"
+  },
+
+  "custom/weather": {
+    "format": "{}",
+    "tooltip": true,
+    "interval": 3600,
+    "exec": "~/.config/waybar/wttrbar --location Severodvinsk --nerd --custom-indicator \"{ICON}  {temp_C}°C\"",
+    "return-type": "json"
+  },
+
+  "custom/gpu": {
+    "format": " {}%",
+    "exec": "cat /sys/class/hwmon/hwmon4/device/gpu_busy_percent",
+    "tooltip-format": "GPU load: {}%",
+    "interval": 5,
+    "on-click": "pgrep -x htop > /dev/null 2>&1 && killall htop || kitty --class htop -e htop"
+  },
+
+  "bluetooth": {
+    "format-on": "󰂯",
+    "format-off": "󰂲",
+    "format-disabled": "",
+    "format-connected": "󰂱",
+    "tooltip-format-off": "Disabled",
+    "tooltip-format": "{controller_alias}\t{controller_address}",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "on-click": "pgrep -x blueman-manager > /dev/null 2>&1 && killall blueman-manager || blueman-manager",
+    "on-click-right": "sh -c '[[ $(bluetoothctl show 5C:C3:36:F6:DB:3B | grep \"PowerState\") =~ \"PowerState: on\" ]] && bluetoothctl power off || bluetoothctl power on'"
+  },
+
+  "custom/pacman": {
+    "format": "{}󰣇",
+    "return-type": "json",
+    "exec-if": "which waybar-module-pacman-updates",
+    "exec": "waybar-module-pacman-updates --no-zero-output --column-color-overrides '1=ebdbb2,2=928374,3=7c6f64,4=8ec07c' --interval-seconds 1 --tooltip-align-columns 'Adwaita Mono'",
+    "on-click": "kitty --title 'System update' --class 'system-update' -e ~/.config/waybar/system-update.sh",
+    "on-click-right": "kitty --title 'Cache cleaning' --class 'cache-cleaning' -e ~/.config/waybar/paccache-clear.sh"
+  }
+}

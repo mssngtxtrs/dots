@@ -30,5 +30,6 @@ Mentoined programs:
 - `spotify-launcher`
 - `kanshi`
 - `starship`
+- `waybar`
 
 Also, `eplayerctl` script is required. It is stored in 'bin/eplayerctl' directory and is automatically linked into '~/.local/bin' when using `install.sh` script.

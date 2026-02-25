@@ -1,0 +1,225 @@
+@define-color background #282828;
+@define-color background-hover #3c3836;
+@define-color background-active #1d2021;
+@define-color foreground #ebdbb2;
+@define-color foreground-hover #a89984;
+@define-color blue #458588;
+@define-color blue-hover #83a598;
+@define-color red #cc241d;
+@define-color red-hover #fb4934;
+@define-color green #98971a;
+@define-color green-hover #b8bb26;
+@define-color yellow #d79921;
+@define-color yellow-hover #fabd2f;
+@define-color orange #d65d0e;
+@define-color orange-hover #fe8019;
+@define-color purple #b16286;
+@define-color purple-hover #d3869b;
+@define-color aqua #689d6a;
+@define-color aqua-hover #8ec07c;
+
+* {
+    font-family: 'Adwaita Sans', 'Font Awesome 7 Free',  sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+window#waybar {
+    background: @background-active;
+    /* background: transparent; */
+    /* background: rgba(29, 32, 33, 0.7); */
+    /* background: rgba(29, 32, 33, 0.89); */
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+tooltip {
+    background: @background-hover;
+    border: none;
+    border-radius: 15px;
+}
+tooltip label {
+    margin: 4px;
+    color: @foreground;
+    /* font-weight: 400; */
+}
+
+#workspaces {
+    margin: 3px 6px;
+}
+#workspaces button {
+    min-width: 8px;
+    min-height: 8px;
+    border-radius: 5px;
+    padding: 0;
+    margin: 6px 0 6px 6px;
+    transition: .3s;
+    background: @background-hover;
+}
+#workspaces button label {
+    font-size: 0;
+    margin: -10px;
+}
+#workspaces button:hover {
+    background: @background-active;
+}
+#workspaces button.active {
+    min-width: 16px;
+    background: @foreground;
+    color: @background;
+}
+#workspaces button.active:hover {
+    background: @foreground-hover;
+}
+
+#custom-separator {
+    padding: 2px 4px;
+    margin: 2px;
+    font-weight: 400;
+    opacity: 0.7;
+}
+
+#cpu,
+#custom-gpu,
+#memory,
+#temperature,
+#custom-weather,
+#window,
+#custom-tray-revealer,
+#language,
+#pulseaudio,
+#network,
+#bluetooth ,
+#power-profiles-daemon,
+#idle_inhibitor,
+#battery,
+#clock {
+    padding: 2px 6px;
+    margin: 3px;
+    border-radius: 15px;
+    transition: background-color .3s, color .3s;
+}
+
+#tray {
+    margin: 3px;
+}
+
+#tray .passive,
+#tray .active,
+#tray .needs-attention {
+    padding: 2px;
+    border-radius: 15px;
+    transition: background-color .3s, color .3s;
+}
+
+#tray .passive image,
+#tray .active image,
+#tray .needs-attention image {
+    margin: 2px 6px;
+    min-width: 15px;
+    min-height: 15px;
+}
+
+#window:hover,
+#tray .passive:hover,
+#tray .active:hover,
+#custom-tray-revealer:hover,
+#language:hover,
+#pulseaudio:hover,
+#network:hover,
+#bluetooth:hover,
+#power-profiles-daemon:hover,
+#idle_inhibitor:hover,
+#battery:hover,
+#clock:hover {
+    background: @background-hover;
+}
+
+#tray .needs-attention {
+    background-color: @orange;
+}
+
+#tray .needs-attention:hover {
+    background-color: @orange-hover;
+}
+
+#language:active,
+#pulseaudio:active,
+#network:active,
+#bluetooth:active,
+#power-profiles-daemon:active,
+#idle_inhibitor:active,
+#battery:active,
+#clock:active {
+    background: @background-active;
+}
+
+#custom-pacman {
+    margin: 3px;
+    padding: 1px 8px 1px 5px;
+    border-radius: 15px;
+    /* background: @blue; */
+    transition: .3s;
+}
+
+#custom-pacman:hover {
+    background: @blue;
+}
+
+#bluetooth {
+    padding: 2px 8px;
+}
+
+#network.wifi {
+    padding-right: 10px;
+}
+
+#group-power {
+    padding: 0;
+    margin: 0;
+}
+
+#cpu:hover {
+    background: @aqua;
+}
+
+#custom-gpu:hover {
+    background: @red;
+}
+
+#memory:hover {
+    background: @green;
+}
+
+#temperature:hover {
+    background: @yellow;
+}
+#temperature.critical {
+    background: @orange;
+}
+#temperature.critical:hover {
+    background: @orange-hover;
+}
+
+#custom-weather:hover {
+    background: @purple;
+}
+
+#battery.warning {
+    color: @orange;
+}
+#battery.critical {
+    background: @orange;
+    color: @foreground;
+}
+#battery.critical:hover {
+    background: @orange-hover;
+}
+#battery.charging {
+    background: @aqua;
+    color: @foreground;
+}
+#battery.charging:hover {
+    background: @aqua-hover;
+}

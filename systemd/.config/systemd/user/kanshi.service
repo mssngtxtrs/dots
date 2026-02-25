@@ -1,0 +1,7 @@
+[Unit]
+Description=Kanshi service
+Documentation=man:kanshi(1)
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/kanshi

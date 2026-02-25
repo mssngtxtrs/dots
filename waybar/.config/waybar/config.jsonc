@@ -1,0 +1,62 @@
+{
+    "name": "topbar",
+    "position": "top",
+    "id": 0,
+    "layer": "top",
+    "height": 26,
+    "fixed-center": false,
+
+    "modules-left": [
+        "custom/pacman",
+        "niri/workspaces",
+        "custom/separator",
+        "cpu",
+        "custom/gpu",
+        "memory",
+        "temperature",
+        "custom/weather",
+        "custom/separator",
+        "niri/window"
+    ],
+    "modules-center": [
+
+    ],
+    "modules-right": [
+        "group/tray-group",
+        "custom/separator",
+        "niri/language",
+        "pulseaudio",
+        "network",
+        "bluetooth",
+        "group/power",
+        "custom/separator",
+        "clock"
+    ],
+
+    "include": "~/.config/waybar/modules.json",
+
+    "group/power": {
+        "orientation": "horizontal",
+        "modules": [
+            "battery",
+            "power-profiles-daemon",
+            "idle_inhibitor"
+        ],
+        "drawer": {
+            "transition-left-to-right": false,
+            "click-to-reveal": false
+        }
+    },
+
+    "group/tray-group": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/tray-revealer",
+            "tray"
+        ],
+        "drawer": {
+            "transition-left-to-right": false,
+            "click-to-reveal": true
+        }
+    }
+}

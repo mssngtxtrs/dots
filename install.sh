@@ -24,6 +24,8 @@ stow \
     qt \
     swaync \
     swayosd \
+    waybar \
+    systemd \
     wlogout \
     portals \
     misc \
