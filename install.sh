@@ -30,3 +30,5 @@ stow \
     portals \
     misc \
     -t $DOTS_STORAGE
+
+systemctl --user enable --now kanshi.service
