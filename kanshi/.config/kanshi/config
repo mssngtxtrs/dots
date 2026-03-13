@@ -8,7 +8,7 @@ output "Samsung Electric Company SAMSUNG Unknown" {
 output "Thermotrex Corporation TL156MDMP31-0 Unknown" {
     mode 3200x2000@120
     position 0,1080
-    scale 1.67
+    scale 1.666666
     adaptive_sync on
     alias $INTERNAL
 }
