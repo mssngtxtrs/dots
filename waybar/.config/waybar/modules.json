@@ -7,11 +7,15 @@
 
   "niri/window": {
     "format": "{title}",
-    "tooltip": false
+    "tooltip": false,
+    "on-scroll-up": "niri msg action focus-column-right",
+    "on-scroll-down": "niri msg action focus-column-left"
   },
 
   "niri/workspaces": {
-    "format": ""
+    "format": "",
+    "on-scroll-up": "niri msg action focus-workspace-up",
+    "on-scroll-down": "niri msg action focus-workspace-down"
   },
 
   "idle_inhibitor": {
