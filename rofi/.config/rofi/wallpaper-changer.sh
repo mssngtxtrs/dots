@@ -24,7 +24,7 @@ done
 
 # If rofi sends us a selection, apply wallpaper
 if [ "$ROFI_RETV" -eq 1 ]; then
-    swww img "${wall_dir}/$@" \
+    awww img "${wall_dir}/$@" \
         -t wipe --transition-step 30 --transition-duration 1 \
         --transition-fps 120 --transition-angle 30
     overview_img_path="${cacheDir}/overview/$@"
@@ -47,4 +47,3 @@ for img in "${wall_dir}"/*; do
     printf "%s\x00icon\x1f%s\x00info\x1f%s\n" \
         "$base" "${cacheDir}/${base}" "$base"
 done
-

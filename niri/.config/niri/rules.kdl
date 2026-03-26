@@ -12,7 +12,6 @@ window-rule {
 
 window-rule {
     match app-id="^zen$"
-    match app-id="^org.telegram.desktop$"
     match app-id="^steam$"
 
     open-maximized true
@@ -27,6 +26,7 @@ window-rule {
 window-rule {
     match app-id="^blender$"
     match app-id="^org.inkscape.Inkscape$"
+    match app-id="^gimp$"
 
     open-maximized true
     open-maximized-to-edges false
@@ -88,10 +88,18 @@ window-rule {
 window-rule {
     match app-id="spotify"
     match app-id="^dev.zed.Zed$"
+    match app-id="^org.telegram.desktop$"
+    match app-id="^anytype$"
 
     default-column-width {
         proportion 0.75
     }
+}
+
+window-rule {
+    match app-id="org.erikreider.swaync"
+
+    open-focused false
 }
 
 window-rule {

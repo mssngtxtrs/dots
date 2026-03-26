@@ -35,7 +35,8 @@ binds {
     Mod+5                   hotkey-overlay-title="<span foreground='cyan'>[ LAUNCH ]</span> OnlyOffice"                         { spawn-sh "gio launch /usr/share/applications/onlyoffice-desktopeditors.desktop NewDocument"; }
     Mod+6                   hotkey-overlay-title="<span foreground='cyan'>[ LAUNCH ]</span> Steam"                              { spawn-sh "gio launch /usr/share/applications/steam.desktop"; }
     Mod+7                   hotkey-overlay-title="<span foreground='cyan'>[ LAUNCH ]</span> Zed"                                { spawn-sh "gio launch ~/.local/share/applications/dev.zed.Zed.desktop"; }
-    Mod+0                   hotkey-overlay-title="<span foreground='cyan'>[ LAUNCH ]</span> Throne"                             { spawn-sh "gio launch /usr/share/applications/Throne.desktop"; }
+    Mod+0                   hotkey-overlay-title="<span foreground='cyan'>[ LAUNCH ]</span> HAPP"                               { spawn-sh "gio launch /usr/share/applications/Happ.desktop"; }
+    Mod+Alt+0               hotkey-overlay-title="<span foreground='cyan'>[ LAUNCH ]</span> Throne"                             { spawn-sh "gio launch /usr/share/applications/Throne.desktop"; }
 
     // ESSENTIAL
 
@@ -62,7 +63,8 @@ binds {
 
     Mod+Shift+C             hotkey-overlay-title="<span foreground='pink'>[ SHORT ]</span> Color picker"                        { spawn-sh "hyprpicker | cliphist store"; }
     Mod+M                   hotkey-overlay-title="<span foreground='pink'>[ SHORT ]</span> Kill application"                    { spawn-sh "kill -KILL $(niri msg pick-window | sed -n -e 's/^.*PID: //p')"; }
-    // Mod+Ctrl+Z                                                                                                               { spawn-sh "niri msg pick-window > ~/picked.txt"; }
+    Mod+Ctrl+Z                                                                                                                  { spawn-sh "niri msg pick-window > ~/picked.txt"; }
+    Mod+Ctrl+X                                                                                                                  { spawn-sh "niri msg layers > ~/layers.txt"; }
 
     // SCRIPTS
 
@@ -82,7 +84,7 @@ binds {
     XF86MonBrightnessUp     allow-when-locked=true                                                                              { spawn-sh "swayosd-client --monitor $(niri msg -j focused-output | jq -r '.name') --brightness +5"; }
     XF86MonBrightnessDown   allow-when-locked=true                                                                              { spawn-sh "swayosd-client --monitor $(niri msg -j focused-output | jq -r '.name') --brightness -5"; }
 
-    Mod+U                   hotkey-overlay-title="<span foreground='magenta'>[ MEDIA ]</span> Choose main player"               { spawn-sh "playerctl --list-all | rofi -dmenu -window-title 'Main player' > ~/.config/main-player"; }
+    Mod+U                   hotkey-overlay-title="<span foreground='magenta'>[ MEDIA ]</span> Choose main player"               { spawn-sh "playerctl --list-all | rofi -dmenu -window-title $((cat ~/.config/main-player; echo; echo 'Empty') | awk 'NF && !x[$0]++') -mesg 'Press Esc to clear main player' > ~/.config/main-player"; }
     XF86AudioPrev           hotkey-overlay-title="<span foreground='magenta'>[ MEDIA ]</span> Previous track"                   { spawn-sh "eplayerctl previous"; }
     XF86SelectiveScreenshot hotkey-overlay-title="<span foreground='magenta'>[ MEDIA ]</span> Previous track"                   { spawn-sh "eplayerctl previous"; }
     XF86AudioNext           hotkey-overlay-title="<span foreground='magenta'>[ MEDIA ]</span> Next track"                       { spawn-sh "eplayerctl next"; }

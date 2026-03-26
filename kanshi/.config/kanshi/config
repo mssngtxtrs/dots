@@ -5,6 +5,14 @@ output "Samsung Electric Company SAMSUNG Unknown" {
     alias $TV
 }
 
+output "Samsung Electric Company S24F350 H4ZN911731" {
+    mode 1920x1080@71.910
+    position 0,0
+    scale 1.0
+    adaptive_sync on
+    alias $MONITOR_SAMSUNG
+}
+
 output "Thermotrex Corporation TL156MDMP31-0 Unknown" {
     mode 3200x2000@120
     position 0,1080
@@ -20,4 +28,9 @@ profile tv {
 
 profile portable {
     output $INTERNAL enable position 0,0
+}
+
+profile huge_balls {
+    output $MONITOR_SAMSUNG enable 
+    output $INTERNAL enable
 }

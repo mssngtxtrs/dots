@@ -6,7 +6,7 @@ spawn-sh-at-startup "systemctl --user start swaync"
 spawn-sh-at-startup "systemctl --user start hypridle.service"
 
 spawn-sh-at-startup "swayosd-server"
-spawn-sh-at-startup "swww-daemon & disown; swww restore; swaybg --image \"/home/mssngtxtrs/.cache/wallpapers/overview/$(swww query | grep -o '[^/]*$' 2>&1 | head -n 1)\" --mode fill"
+// spawn-sh-at-startup "awww-daemon & disown; awww restore; swaybg --image \"/home/mssngtxtrs/.cache/wallpapers/overview/$(awww query | grep -o '[^/]*$' 2>&1 | head -n 1)\" --mode fill"
 
 spawn-sh-at-startup "kdeconnectd && kdeconnect-indicator"
 
