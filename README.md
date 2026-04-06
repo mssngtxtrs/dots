@@ -13,23 +13,18 @@ To install these you can run the following command:
 For installation, you need `stow` program.
 
 Mentoined programs:
-- `rofi`
 - `niri`
-- `hypridle`
 - `alacritty`
 - `btop`
 - `kitty`
 - `fastfetch`
-- `gtklock`
 - `qt5ct`
 - `qt6ct`
-- `swaync`
-- `swayosd`
 - `zsh`
 - `MangoHud`
 - `spotify-launcher`
 - `kanshi`
 - `starship`
-- `waybar`
+- `noctalia-shell`
 
 Also, `eplayerctl` script is required. It is stored in 'bin/eplayerctl' directory and is automatically linked into '~/.local/bin' when using `install.sh` script.
