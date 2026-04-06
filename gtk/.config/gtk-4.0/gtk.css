@@ -1,29 +1,29 @@
-/* Gruvbox Dark Hard Palette */
-@define-color window_bg_color #1d2021; /* bg0_hard */
-@define-color window_fg_color #fbf1c7; /* fg */
+/* Gruvbox Dark Medium Palette */
+@define-color window_bg_color #282828; /* bg0 */
+@define-color window_fg_color #ebdbb2; /* fg */
 
 /* View styling */
-@define-color view_bg_color #1d2021; /* bg0_hard */
-@define-color view_fg_color #fbf1c7;
+@define-color view_bg_color #282828;
+@define-color view_fg_color #ebdbb2;
 
 /* Header bar */
 @define-color headerbar_bg_color #1d2021; /* bg0_hard */
 @define-color headerbar_backdrop_color #1d2021;
-@define-color headerbar_fg_color #fbf1c7;
+@define-color headerbar_fg_color #ebdbb2;
 
 /* Popovers and dialogs */
-@define-color popover_bg_color #282828; /* bg0 */
-@define-color popover_fg_color #fbf1c7;
+@define-color popover_bg_color #282828;
+@define-color popover_fg_color #ebdbb2;
 
 @define-color dialog_bg_color @popover_bg_color;
 @define-color dialog_fg_color @popover_fg_color;
 
 /* Cards and sidebars */
-@define-color card_bg_color #282828; /* bg0 */
-@define-color card_fg_color #fbf1c7;
+@define-color card_bg_color #3c3a36;
+@define-color card_fg_color #ebdbb2;
 
-@define-color sidebar_bg_color #1d2021; /* bg0 */
-@define-color sidebar_fg_color #fbf1c7;
+@define-color sidebar_bg_color #282828;
+@define-color sidebar_fg_color #ebdbb2;
 @define-color sidebar_backdrop_color @sidebar_bg_color;
 @define-color sidebar_border_color #504945; /* bg3 */
 
@@ -88,17 +88,17 @@
 @define-color dark_5 #32302f; /* bg0_soft */
 
 toast {
-    background-color: @window_bg_color;
-    color: @window_fg_color;
+  background-color: @window_bg_color;
+  color: @window_fg_color;
 }
 
 toggle:checked {
-    background-color: @card_bg_color;
-    color: @window_fg_color;
+  background-color: @card_bg_color;
+  color: @window_fg_color;
 }
 
 .inline {
-    background-color: rgba(0, 0, 0, 0);
+	background-color: rgba(0, 0, 0, 0);
 }
 
 

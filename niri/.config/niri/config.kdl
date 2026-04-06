@@ -6,3 +6,5 @@ include "animations.kdl"
 include "input.kdl"
 include "rules.kdl"
 include "other.kdl"
+
+include "./noctalia.kdl"

@@ -1,0 +1,13 @@
+{
+  "nameCmd": "(checkupdates; paru -Qua;) | awk '{print $1}'",
+  "oldVerCmd": "(checkupdates; paru -Qua;) | awk '{print $2}'",
+  "newVerCmd": "(checkupdates; paru -Qua;) | awk '{print $4}'",
+  "updateCmd": "kitty --title 'System update' --class 'system-update' -e '/home/mssngtxtrs/.config/waybar/system-update.sh'",
+  "flatpak": true,
+  "noctalia": true,
+  "toast": true,
+  "desktopTip": true,
+  "hideOnEmpty": true,
+  "refreshTimer": true,
+  "refreshInterval": 120
+}

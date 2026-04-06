@@ -17,7 +17,7 @@ Mentoined programs:
 - `niri`
 - `hypridle`
 - `alacritty`
-- `htop`
+- `btop`
 - `kitty`
 - `fastfetch`
 - `gtklock`

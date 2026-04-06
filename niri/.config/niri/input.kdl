@@ -35,29 +35,31 @@ binds {
     Mod+5                   hotkey-overlay-title="<span foreground='cyan'>[ LAUNCH ]</span> OnlyOffice"                         { spawn-sh "gio launch /usr/share/applications/onlyoffice-desktopeditors.desktop NewDocument"; }
     Mod+6                   hotkey-overlay-title="<span foreground='cyan'>[ LAUNCH ]</span> Steam"                              { spawn-sh "gio launch /usr/share/applications/steam.desktop"; }
     Mod+7                   hotkey-overlay-title="<span foreground='cyan'>[ LAUNCH ]</span> Zed"                                { spawn-sh "gio launch ~/.local/share/applications/dev.zed.Zed.desktop"; }
-    Mod+0                   hotkey-overlay-title="<span foreground='cyan'>[ LAUNCH ]</span> HAPP"                               { spawn-sh "gio launch /usr/share/applications/Happ.desktop"; }
-    Mod+Alt+0               hotkey-overlay-title="<span foreground='cyan'>[ LAUNCH ]</span> Throne"                             { spawn-sh "gio launch /usr/share/applications/Throne.desktop"; }
+    Mod+Alt+0               hotkey-overlay-title="<span foreground='cyan'>[ LAUNCH ]</span> HAPP"                               { spawn-sh "gio launch /usr/share/applications/Happ.desktop"; }
+    Mod+0                   hotkey-overlay-title="<span foreground='cyan'>[ LAUNCH ]</span> Throne"                             { spawn-sh "gio launch /usr/share/applications/Throne.desktop"; }
 
     // ESSENTIAL
 
-    Mod+D                   hotkey-overlay-title="<span foreground='gold'>[ ESSENTIAL ]</span> Application menu"                { spawn-sh "pgrep -x rofi >/dev/null 2>&1 && killall rofi || rofi -show drun -config launcher.rasi"; }
-    Mod+V                   hotkey-overlay-title="<span foreground='gold'>[ ESSENTIAL ]</span> Clipboard"                       { spawn-sh "pgrep -x rofi >/dev/null 2>&1 && killall rofi || cliphist list | rofi -window-title \"Clipboard\" -dmenu | cliphist decode | wl-copy"; }
+    Mod+D                   hotkey-overlay-title="<span foreground='gold'>[ ESSENTIAL ]</span> Application menu"                { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
+    Mod+V                   hotkey-overlay-title="<span foreground='gold'>[ ESSENTIAL ]</span> Clipboard"                       { spawn-sh "qs -c noctalia-shell ipc call launcher clipboard"; }
     Mod+T                   hotkey-overlay-title="<span foreground='gold'>[ ESSENTIAL ]</span> Terminal"                        { spawn "kitty"; }
-    Mod+P                   hotkey-overlay-title="<span foreground='gold'>[ ESSENTIAL ]</span> Suspend"                         { spawn-sh "systemctl suspend -i"; }
-    Control+Shift+Escape    hotkey-overlay-title="<span foreground='gold'>[ ESSENTIAL ]</span> Task manager"                    { spawn-sh "pgrep -x htop > /dev/null 2>&1 && killall htop || kitty --class htop -e htop"; }
+    Mod+P                   hotkey-overlay-title="<span foreground='gold'>[ ESSENTIAL ]</span> Suspend"                         { spawn-sh "qs -c noctalia-shell ipc call sessionMenu lockAndSuspend"; }
+    Control+Shift+Escape    hotkey-overlay-title="<span foreground='gold'>[ ESSENTIAL ]</span> Task manager"                    { spawn-sh "pgrep -x btop > /dev/null 2>&1 && killall btop || kitty --class btop --title btop -e btop"; }
 
     // SYSTEM
 
-    Ctrl+Alt+Delete         hotkey-overlay-title="<span foreground='red'>[ SYSTEM ]</span> Power menu"                          { spawn-sh "pgrep -x wlogout >/dev/null 2>&1 && killall wlogout || wlogout -l ~/.config/wlogout/layout -C ~/.config/wlogout/style.css -b 4 -c 16 "; }
-    Mod+Alt+Tab             hotkey-overlay-title="<span foreground='red'>[ SYSTEM ]</span> Window switch"                       { spawn-sh "pgrep -x rofi >/dev/null 2>&1 && killall rofi || rofi -show window -config search.rasi"; }
-    Mod+X                   hotkey-overlay-title="<span foreground='red'>[ SYSTEM ]</span> Wallpaper change"                    { spawn-sh "pgrep -x rofi >/dev/null 2>&1 && killall rofi || rofi -show wallpaper -config launcher.rasi"; }
-    Mod+Q                   hotkey-overlay-title="<span foreground='red'>[ SYSTEM ]</span> Open file"                           { spawn-sh "pgrep -x rofi >/dev/null 2>&1 && killall rofi || rofi -show filebrowser -config launcher.rasi"; }
-    Mod+S                   hotkey-overlay-title="<span foreground='red'>[ SYSTEM ]</span> Calculator"                          { spawn-sh "pgrep -x rofi >/dev/null 2>&1 && killall rofi || rofi -show calc -config search.rasi"; }
-    Mod+R                   hotkey-overlay-title="<span foreground='red'>[ SYSTEM ]</span> Runner"                              { spawn-sh "pgrep -x rofi >/dev/null 2>&1 && killall rofi || rofi -show run -config search.rasi"; }
+    Ctrl+Alt+Delete         hotkey-overlay-title="<span foreground='red'>[ SYSTEM ]</span> Power menu"                          { spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle"; }
+    Mod+Alt+Tab             hotkey-overlay-title="<span foreground='red'>[ SYSTEM ]</span> Window switch"                       { spawn-sh "qs -c noctalia-shell ipc call launcher windows"; }
+    Mod+X                   hotkey-overlay-title="<span foreground='red'>[ SYSTEM ]</span> Wallpaper change"                    { spawn-sh "qs -c noctalia-shell ipc call wallpaper toggle"; }
+    Mod+Q                   hotkey-overlay-title="<span foreground='red'>[ SYSTEM ]</span> Control Center"                      { spawn-sh "qs -c noctalia-shell ipc call controlCenter toggle"; }
+    Mod+S                   hotkey-overlay-title="<span foreground='red'>[ SYSTEM ]</span> Calculator"                          { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
+    Mod+Period              hotkey-overlay-title="<span foreground='red'>[ SYSTEM ]</span> Emoji picker"                        { spawn-sh "qs -c noctalia-shell ipc call launcher emoji"; }
+    Mod+Comma               hotkey-overlay-title="<span foreground='red'>[ SYSTEM ]</span> Kaomoji picker"                      { spawn-sh "qs -c noctalia-shell ipc call plugin:kaomoji toggle"; }
+    Mod+R                   hotkey-overlay-title="<span foreground='red'>[ SYSTEM ]</span> Runner"                              { spawn-sh "qs -c noctalia-shell ipc call launcher command"; }
     Mod+E                   hotkey-overlay-title="<span foreground='red'>[ SYSTEM ]</span> File manager"                        { spawn-sh "nautilus --new-window"; }
-    Mod+B                   hotkey-overlay-title="<span foreground='red'>[ SYSTEM ]</span> Bluetooth"                           { spawn-sh "pgrep -x blueman-manager >/dev/null 2>&1 && killall blueman-manager || blueman-manager"; }
-    Mod+N                   hotkey-overlay-title="<span foreground='red'>[ SYSTEM ]</span> Network"                             { spawn-sh "pgrep -x rofi >/dev/null 2>&1 && killall rofi || networkmanager_dmenu"; }
-    Mod+W                   hotkey-overlay-title="<span foreground='red'>[ SYSTEM ]</span> Notifications"                       { spawn-sh "swaync-client -t"; }
+    Mod+B                   hotkey-overlay-title="<span foreground='red'>[ SYSTEM ]</span> Bluetooth"                           { spawn-sh "qs -c noctalia-shell ipc call bluetooth togglePanel"; }
+    Mod+N                   hotkey-overlay-title="<span foreground='red'>[ SYSTEM ]</span> Network"                             { spawn-sh "qs -c noctalia-shell ipc call network togglePanel"; }
+    Mod+W                   hotkey-overlay-title="<span foreground='red'>[ SYSTEM ]</span> Notifications"                       { spawn-sh "qs -c noctalia-shell ipc call notifications toggleHistory"; }
 
     // SHORT
 
@@ -72,27 +74,26 @@ binds {
     Mod+F2                  hotkey-overlay-title="<span foreground='green'>[ FIX ]</span> Toggle internal monitor"              { spawn-sh "~/.config/niri/fixes_scripts/edp_disable.sh"; }
     Mod+Alt+F2              hotkey-overlay-title="<span foreground='green'>[ FIX ]</span> Toggle external monitor"              { spawn-sh "~/.config/niri/fixes_scripts/hdmi_disable.sh"; }
     Mod+F3                  hotkey-overlay-title="<span foreground='green'>[ FIX ]</span> Reset position of internal monitor"   { spawn-sh "~/.config/niri/fixes_scripts/position_reset.sh"; }
-    Mod+F4                  hotkey-overlay-title="<span foreground='green'>[ FIX ]</span> Restart wallpaper daemons"            { spawn-sh "~/.config/niri/fixes_scripts/restart_wallpaper.sh"; }
 
     // MEDIA
 
-    XF86AudioRaiseVolume    allow-when-locked=true                                                                              { spawn-sh "swayosd-client --monitor $(niri msg -j focused-output | jq -r '.name') --output-volume 5"; }
-    XF86AudioLowerVolume    allow-when-locked=true                                                                              { spawn-sh "swayosd-client --monitor $(niri msg -j focused-output | jq -r '.name') --output-volume -5"; }
-    XF86AudioMute           allow-when-locked=true                                                                              { spawn-sh "swayosd-client --monitor $(niri msg -j focused-output | jq -r '.name') --output-volume mute-toggle"; }
-    XF86AudioMicMute        allow-when-locked=true                                                                              { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+    XF86AudioRaiseVolume    allow-when-locked=true                                                                              { spawn-sh "qs -c noctalia-shell ipc call volume increase"; }
+    XF86AudioLowerVolume    allow-when-locked=true                                                                              { spawn-sh "qs -c noctalia-shell ipc call volume decrease"; }
+    XF86AudioMute           allow-when-locked=true                                                                              { spawn-sh "qs -c noctalia-shell ipc call volume muteOutput"; }
+    XF86AudioMicMute        allow-when-locked=true                                                                              { spawn-sh "qs -c noctalia-shell ipc call volume muteInput"; }
 
-    XF86MonBrightnessUp     allow-when-locked=true                                                                              { spawn-sh "swayosd-client --monitor $(niri msg -j focused-output | jq -r '.name') --brightness +5"; }
-    XF86MonBrightnessDown   allow-when-locked=true                                                                              { spawn-sh "swayosd-client --monitor $(niri msg -j focused-output | jq -r '.name') --brightness -5"; }
+    XF86MonBrightnessUp     allow-when-locked=true                                                                              { spawn-sh "qs -c noctalia-shell ipc call brightness increase"; }
+    XF86MonBrightnessDown   allow-when-locked=true                                                                              { spawn-sh "qs -c noctalia-shell ipc call brightness decrease"; }
 
-    Mod+U                   hotkey-overlay-title="<span foreground='magenta'>[ MEDIA ]</span> Choose main player"               { spawn-sh "playerctl --list-all | rofi -dmenu -window-title $((cat ~/.config/main-player; echo; echo 'Empty') | awk 'NF && !x[$0]++') -mesg 'Press Esc to clear main player' > ~/.config/main-player"; }
-    XF86AudioPrev           hotkey-overlay-title="<span foreground='magenta'>[ MEDIA ]</span> Previous track"                   { spawn-sh "eplayerctl previous"; }
-    XF86SelectiveScreenshot hotkey-overlay-title="<span foreground='magenta'>[ MEDIA ]</span> Previous track"                   { spawn-sh "eplayerctl previous"; }
-    XF86AudioNext           hotkey-overlay-title="<span foreground='magenta'>[ MEDIA ]</span> Next track"                       { spawn-sh "eplayerctl next"; }
-    XF86LaunchB             hotkey-overlay-title="<span foreground='magenta'>[ MEDIA ]</span> Next track"                       { spawn-sh "eplayerctl next"; }
-    XF86Assistant           hotkey-overlay-title="<span foreground='magenta'>[ MEDIA ]</span> Play/pause"                       { spawn-sh "eplayerctl play-pause"; }
-    XF86AudioPlay           hotkey-overlay-title="<span foreground='magenta'>[ MEDIA ]</span> Play"                             { spawn-sh "eplayerctl play"; }
-    XF86AudioStop           hotkey-overlay-title="<span foreground='magenta'>[ MEDIA ]</span> Pause"                            { spawn-sh "eplayerctl pause"; }
-    XF86AudioPause          hotkey-overlay-title="<span foreground='magenta'>[ MEDIA ]</span> Pause"                            { spawn-sh "eplayerctl pause"; }
+    Mod+U                   hotkey-overlay-title="<span foreground='magenta'>[ MEDIA ]</span> Choose main player"               { spawn-sh "qs -c noctalia-shell ipc call media toggle"; }
+    XF86AudioPrev           hotkey-overlay-title="<span foreground='magenta'>[ MEDIA ]</span> Previous track"                   { spawn-sh "qs -c noctalia-shell ipc call media previous"; }
+    XF86SelectiveScreenshot hotkey-overlay-title="<span foreground='magenta'>[ MEDIA ]</span> Previous track"                   { spawn-sh "qs -c noctalia-shell ipc call media previous"; }
+    XF86AudioNext           hotkey-overlay-title="<span foreground='magenta'>[ MEDIA ]</span> Next track"                       { spawn-sh "qs -c noctalia-shell ipc call media next"; }
+    XF86LaunchB             hotkey-overlay-title="<span foreground='magenta'>[ MEDIA ]</span> Next track"                       { spawn-sh "qs -c noctalia-shell ipc call media next"; }
+    XF86Assistant           hotkey-overlay-title="<span foreground='magenta'>[ MEDIA ]</span> Play/pause"                       { spawn-sh "qs -c noctalia-shell ipc call media playPause"; }
+    XF86AudioPlay           hotkey-overlay-title="<span foreground='magenta'>[ MEDIA ]</span> Play"                             { spawn-sh "qs -c noctalia-shell ipc call media play"; }
+    XF86AudioStop           hotkey-overlay-title="<span foreground='magenta'>[ MEDIA ]</span> Pause"                            { spawn-sh "qs -c noctalia-shell ipc call media pause"; }
+    XF86AudioPause          hotkey-overlay-title="<span foreground='magenta'>[ MEDIA ]</span> Pause"                            { spawn-sh "qs -c noctalia-shell ipc call media pause"; }
 
     // DEFAULT
 
@@ -188,8 +189,8 @@ binds {
     Mod+BracketLeft  { consume-or-expel-window-left; }
     Mod+BracketRight { consume-or-expel-window-right; }
 
-    Mod+Comma  { consume-window-into-column; }
-    Mod+Period { expel-window-from-column; }
+    // Mod+Comma  { consume-window-into-column; }
+    // Mod+Period { expel-window-from-column; }
 
     // Mod+R { switch-preset-column-width; }
     // Mod+Shift+R { switch-preset-window-height; }
