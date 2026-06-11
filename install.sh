@@ -20,6 +20,3 @@ stow \
     portals \
     misc \
     -t $DOTS_STORAGE
-
-echo "Installing packages..."
-./packages.sh
