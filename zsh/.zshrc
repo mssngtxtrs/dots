@@ -1,7 +1,5 @@
-fastfetch
-
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -110,3 +108,5 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 eval "$(starship init zsh)"
+
+fastfetch

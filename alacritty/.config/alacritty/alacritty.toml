@@ -3,6 +3,7 @@ import = ["~/.config/alacritty/themes/noctalia.toml"]
 
 [window]
 decorations_theme_variant = "Dark"
+opacity = 0.94
 
 [font]
 normal = { family = "Adwaita Mono" }
@@ -46,6 +47,6 @@ size = 11
 bindings = [
     {key = "+", mods = "Control | Shift | Alt", action = "IncreaseFontSize"},
     {key = "_", mods = "Control | Shift | Alt", action = "DecreaseFontSize"},
-    {key = ")", mods = "Control | Shift | Alt", action = "ResetFontSize"},
+    {key = "Backspace", mods = "Control | Shift | Alt", action = "ResetFontSize"},
     {key = "V", mods = "Control | Shift | Alt", action = "ToggleViMode"},
 ]

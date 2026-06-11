@@ -1,3 +1,5 @@
+include "./noctalia.kdl"
+
 include "environment.kdl"
 include "autostart.kdl"
 include "style.kdl"
@@ -6,5 +8,3 @@ include "animations.kdl"
 include "input.kdl"
 include "rules.kdl"
 include "other.kdl"
-
-include "./noctalia.kdl"

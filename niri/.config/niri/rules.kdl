@@ -4,6 +4,32 @@ layer-rule {
 }
 
 window-rule {
+    match app-id="^kitty$"
+    match app-id="^Alacritty$"
+    match app-id="^btop$"
+
+    background-effect {
+        xray true
+        blur true
+    }
+
+    opacity 0.95
+}
+
+window-rule {
+    match app-id="^kitty$" is-focused=true
+    match app-id="^Alacritty$" is-focused=true
+    match app-id="^btop$" is-focused=true
+
+    background-effect {
+        xray true
+        blur true
+    }
+
+    opacity 1.0
+}
+
+window-rule {
     match app-id=r#"^org\.keepassxc\.KeePassXC$"#
     match app-id=r#"^org\.gnome\.World\.Secrets$"#
 
@@ -41,7 +67,6 @@ window-rule {
     match app-id="^blueman-manager$"
     match app-id="^org.gnome.NautilusPreviewer$"
     match app-id="^app.drey.Dialect$"
-    match app-id="^btop$"
     match app-id="^system-update$"
     match app-id="^cache-cleaning$"
     match title="^ballin$"
@@ -52,44 +77,45 @@ window-rule {
 }
 
 window-rule {
-    match app-id="^com.saivert.pwvucontrol$"
-    match app-id="^blueman-manager$"
+    match app-id="^btop$"
 
-    // default-column-width { fixed 800; }
-    // default-window-height { fixed 600; }
-    // default-floating-position x=8 y=8 relative-to="top-right"
+    open-floating true
 
-    // geometry-corner-radius 11
+    min-width 1200
+    min-height 900
 
-    default-column-width { fixed 560; }
-    default-window-height { proportion 1.0; }
-    default-floating-position x=0 y=0 relative-to="top-right"
-
-    border {
-        off
-    }
-
-    focus-ring {
-        off
-    }
-
-    geometry-corner-radius 0
+    default-floating-position x=8 y=8 relative-to="top-left"
+    geometry-corner-radius 11
 }
 
 window-rule {
     match app-id="^zen$" title="^Picture-in-Picture$"
 
     min-width 500
+    max-width 500
+
+    min-height 281
+    max-height 281
+
+    background-effect {
+        xray false
+        blur false
+    }
+
+    opacity 1.0
 
     default-floating-position x=8 y=8 relative-to="bottom-right"
     geometry-corner-radius 11
 }
 
 window-rule {
-    match app-id="spotify"
+    match app-id="^Spotify$"
     match app-id="^dev.zed.Zed$"
     match app-id="^org.telegram.desktop$"
     match app-id="^anytype$"
+    match app-id="^audacity$"
+    match app-id="^vesktop$"
+    match app-id="^com.obsproject.Studio$"
 
     default-column-width {
         proportion 0.75

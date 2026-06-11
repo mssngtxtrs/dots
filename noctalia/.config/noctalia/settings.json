@@ -6,7 +6,7 @@
         "clipboardWrapText": true,
         "customLaunchPrefix": "",
         "customLaunchPrefixEnabled": false,
-        "density": "default",
+        "density": "compact",
         "enableClipPreview": true,
         "enableClipboardChips": true,
         "enableClipboardHistory": true,
@@ -30,10 +30,10 @@
     "audio": {
         "mprisBlacklist": [
         ],
-        "preferredPlayer": "spotify",
+        "preferredPlayer": "",
         "spectrumFrameRate": 30,
-        "spectrumMirrored": true,
-        "visualizerType": "linear",
+        "spectrumMirrored": false,
+        "visualizerType": "none",
         "volumeFeedback": false,
         "volumeFeedbackSoundFile": "",
         "volumeOverdrive": false,
@@ -49,7 +49,7 @@
         "contentPadding": 2,
         "density": "default",
         "displayMode": "always_visible",
-        "enableExclusionZoneInset": true,
+        "enableExclusionZoneInset": false,
         "fontScale": 0.9,
         "frameRadius": 12,
         "frameThickness": 8,
@@ -63,7 +63,7 @@
         ],
         "mouseWheelAction": "workspace",
         "mouseWheelWrap": true,
-        "outerCorners": true,
+        "outerCorners": false,
         "position": "top",
         "reverseScroll": false,
         "rightClickAction": "controlCenter",
@@ -78,34 +78,28 @@
         "showCapsule": false,
         "showOnWorkspaceSwitch": true,
         "showOutline": false,
-        "useSeparateOpacity": true,
+        "useSeparateOpacity": false,
         "widgetSpacing": 6,
         "widgets": {
             "center": [
             ],
             "left": [
                 {
-                    "defaultSettings": {
-                        "desktopTip": true,
-                        "flatpak": true,
-                        "hideOnEmpty": false,
-                        "nameCmd": "(checkupdates; paru -Qua;) | awk '{print $1}'",
-                        "newVerCmd": "(checkupdates; paru -Qua;) | awk '{print $4}'",
-                        "noctalia": true,
-                        "oldVerCmd": "(checkupdates; paru -Qua;) | awk '{print $2}'",
-                        "refreshInterval": 120,
-                        "refreshTimer": true,
-                        "toast": true,
-                        "updateCmd": "ghostty -e bash -c 'echo \"Updating System...\";paru; flatpak update; read -n 1 -p \"Press any key to exit...\"'"
-                    },
-                    "id": "plugin:arch-updater"
+                    "colorizeDistroLogo": false,
+                    "colorizeSystemIcon": "tertiary",
+                    "colorizeSystemText": "none",
+                    "customIconPath": "",
+                    "enableColorization": true,
+                    "icon": "noctalia",
+                    "id": "ControlCenter",
+                    "useDistroLogo": true
                 },
                 {
                     "characterCount": 2,
                     "colorizeIcons": true,
-                    "emptyColor": "secondary",
+                    "emptyColor": "primary",
                     "enableScrollWheel": true,
-                    "focusedColor": "primary",
+                    "focusedColor": "tertiary",
                     "followFocusedScreen": false,
                     "fontWeight": "bold",
                     "groupedBorderOpacity": 1,
@@ -113,9 +107,9 @@
                     "iconScale": 0.8,
                     "id": "Workspace",
                     "labelMode": "none",
-                    "occupiedColor": "secondary",
+                    "occupiedColor": "primary",
                     "pillSize": 0.4,
-                    "showApplications": true,
+                    "showApplications": false,
                     "showApplicationsHover": true,
                     "showBadge": true,
                     "showLabelsOnlyWhenOccupied": true,
@@ -123,7 +117,7 @@
                 },
                 {
                     "compactMode": false,
-                    "diskPath": "/",
+                    "diskPath": "/home/mssngtxtrs/_vault",
                     "iconColor": "primary",
                     "id": "SystemMonitor",
                     "showCpuCores": false,
@@ -157,27 +151,15 @@
                     "colorizeIcons": true,
                     "hideMode": "hidden",
                     "id": "ActiveWindow",
-                    "maxWidth": 10000,
+                    "maxWidth": 1000,
                     "scrollingMode": "never",
                     "showIcon": false,
                     "showText": true,
                     "textColor": "none",
-                    "useFixedWidth": false
+                    "useFixedWidth": true
                 }
             ],
             "right": [
-                {
-                    "defaultSettings": {
-                        "autoMount": false,
-                        "fileBrowser": "yazi",
-                        "hideWhenEmpty": false,
-                        "iconColor": "none",
-                        "showBadge": false,
-                        "showNotifications": true,
-                        "terminalCommand": "kitty"
-                    },
-                    "id": "plugin:usb-drive-manager"
-                },
                 {
                     "blacklist": [
                     ],
@@ -187,6 +169,7 @@
                     "hidePassive": true,
                     "id": "Tray",
                     "pinned": [
+                        "nm-applet"
                     ]
                 },
                 {
@@ -202,7 +185,7 @@
                     "id": "plugin:privacy-indicator"
                 },
                 {
-                    "displayMode": "forceOpen",
+                    "displayMode": "graphic",
                     "iconColor": "none",
                     "id": "KeyboardLayout",
                     "showIcon": false,
@@ -218,24 +201,19 @@
                     "showPowerProfiles": true
                 },
                 {
-                    "defaultSettings": {
-                    },
-                    "id": "plugin:kde-connect"
-                },
-                {
-                    "displayMode": "onhover",
+                    "displayMode": "alwaysHide",
                     "iconColor": "none",
                     "id": "Bluetooth",
                     "textColor": "none"
                 },
                 {
-                    "displayMode": "onhover",
+                    "displayMode": "alwaysHide",
                     "iconColor": "none",
                     "id": "Network",
                     "textColor": "none"
                 },
                 {
-                    "displayMode": "onhover",
+                    "displayMode": "alwaysHide",
                     "iconColor": "none",
                     "id": "Volume",
                     "middleClickCommand": "pwvucontrol || pavucontrol",
@@ -251,7 +229,7 @@
                     "useCustomFont": false
                 },
                 {
-                    "hideWhenZero": true,
+                    "hideWhenZero": false,
                     "hideWhenZeroUnread": false,
                     "iconColor": "none",
                     "id": "NotificationHistory",
@@ -266,7 +244,7 @@
         ],
         "brightnessStep": 5,
         "enableDdcSupport": true,
-        "enforceMinimum": true
+        "enforceMinimum": false
     },
     "calendar": {
         "cards": [
@@ -323,7 +301,7 @@
             }
         ],
         "diskPath": "/",
-        "position": "top_right",
+        "position": "top_left",
         "shortcuts": {
             "left": [
                 {
@@ -374,8 +352,8 @@
         "colorizeIcons": true,
         "deadOpacity": 0.6,
         "displayMode": "auto_hide",
-        "dockType": "attached",
-        "enabled": true,
+        "dockType": "floating",
+        "enabled": false,
         "floatingRatio": 0.23,
         "groupApps": true,
         "groupClickAction": "list",
@@ -383,7 +361,7 @@
         "groupIndicatorStyle": "dots",
         "inactiveIndicators": true,
         "indicatorColor": "primary",
-        "indicatorOpacity": 0.6,
+        "indicatorOpacity": 0.4,
         "indicatorThickness": 3,
         "launcherIcon": "grid-dots",
         "launcherIconColor": "primary",
@@ -393,27 +371,27 @@
         ],
         "onlySameOutput": true,
         "pinnedApps": [
-            "zen",
             "org.telegram.desktop",
+            "zen",
             "anytype",
             "onlyoffice-desktopeditors",
             "steam",
             "dev.zed.Zed",
-            "spotify-launcher",
-            "Throne"
+            "Throne",
+            "spotify-launcher"
         ],
         "pinnedStatic": false,
         "position": "bottom",
         "showDockIndicator": false,
         "showLauncherIcon": true,
         "sitOnFrame": false,
-        "size": 1.3
+        "size": 1.5
     },
     "general": {
         "allowPanelsOnScreenWithoutBar": true,
         "allowPasswordWithFprintd": false,
         "animationDisabled": false,
-        "animationSpeed": 1,
+        "animationSpeed": 1.2,
         "autoStartAuth": false,
         "avatarImage": "/home/mssngtxtrs/Pictures/хуйня/аватарки/1769361129109.jpg",
         "boxRadiusRatio": 1,
@@ -421,11 +399,11 @@
         "clockStyle": "analog",
         "compactLockScreen": false,
         "dimmerOpacity": 0.2,
-        "enableBlurBehind": false,
+        "enableBlurBehind": true,
         "enableLockScreenCountdown": true,
         "enableLockScreenMediaControls": true,
         "enableShadows": false,
-        "forceBlackScreenCorners": false,
+        "forceBlackScreenCorners": true,
         "iRadiusRatio": 0.7000000000000001,
         "keybinds": {
             "keyDown": [
@@ -459,11 +437,11 @@
         "lockScreenMonitors": [
         ],
         "lockScreenTint": 0,
-        "passwordChars": false,
+        "passwordChars": true,
         "radiusRatio": 1,
         "reverseScroll": false,
         "scaleRatio": 1,
-        "screenRadiusRatio": 1,
+        "screenRadiusRatio": 0.75,
         "shadowDirection": "bottom_right",
         "shadowOffsetX": 2,
         "shadowOffsetY": 3,
@@ -509,7 +487,7 @@
         "name": "Severodvinsk",
         "showCalendarEvents": true,
         "showCalendarWeather": true,
-        "showWeekNumberInCalendar": false,
+        "showWeekNumberInCalendar": true,
         "use12hourFormat": false,
         "useFahrenheit": false,
         "weatherEnabled": true,
@@ -529,7 +507,7 @@
     "nightLight": {
         "autoSchedule": true,
         "dayTemp": "6500",
-        "enabled": false,
+        "enabled": true,
         "forced": false,
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
@@ -543,7 +521,7 @@
         "backgroundOpacity": 0.89,
         "clearDismissed": true,
         "criticalUrgencyDuration": 30,
-        "density": "default",
+        "density": "compact",
         "enableBatteryToast": true,
         "enableKeyboardLayoutToast": false,
         "enableMarkdown": false,
@@ -586,7 +564,7 @@
         "overlayLayer": true
     },
     "plugins": {
-        "autoUpdate": false,
+        "autoUpdate": true,
         "notifyUpdates": true
     },
     "sessionMenu": {
@@ -658,23 +636,23 @@
     },
     "settingsVersion": 59,
     "systemMonitor": {
-        "batteryCriticalThreshold": 5,
+        "batteryCriticalThreshold": 10,
         "batteryWarningThreshold": 20,
-        "cpuCriticalThreshold": 90,
-        "cpuWarningThreshold": 80,
+        "cpuCriticalThreshold": 100,
+        "cpuWarningThreshold": 100,
         "criticalColor": "#fb4934",
-        "diskAvailCriticalThreshold": 10,
-        "diskAvailWarningThreshold": 20,
-        "diskCriticalThreshold": 90,
-        "diskWarningThreshold": 80,
+        "diskAvailCriticalThreshold": 0,
+        "diskAvailWarningThreshold": 0,
+        "diskCriticalThreshold": 100,
+        "diskWarningThreshold": 100,
         "enableDgpuMonitoring": false,
-        "externalMonitor": "resources || missioncenter || jdsystemmonitor || corestats || system-monitoring-center || gnome-system-monitor || plasma-systemmonitor || mate-system-monitor || ukui-system-monitor || deepin-system-monitor || pantheon-system-monitor",
+        "externalMonitor": "kitty --class btop --title btop -e btop",
         "gpuCriticalThreshold": 90,
         "gpuWarningThreshold": 80,
-        "memCriticalThreshold": 90,
-        "memWarningThreshold": 80,
-        "swapCriticalThreshold": 90,
-        "swapWarningThreshold": 80,
+        "memCriticalThreshold": 100,
+        "memWarningThreshold": 100,
+        "swapCriticalThreshold": 100,
+        "swapWarningThreshold": 100,
         "tempCriticalThreshold": 90,
         "tempWarningThreshold": 80,
         "useCustomColors": false,
@@ -700,10 +678,6 @@
             },
             {
                 "enabled": true,
-                "id": "telegram"
-            },
-            {
-                "enabled": true,
                 "id": "zenBrowser"
             },
             {
@@ -713,6 +687,22 @@
             {
                 "enabled": true,
                 "id": "btop"
+            },
+            {
+                "enabled": true,
+                "id": "discord"
+            },
+            {
+                "enabled": true,
+                "id": "telegram"
+            },
+            {
+                "enabled": true,
+                "id": "qt"
+            },
+            {
+                "enabled": true,
+                "id": "hyprland"
             }
         ],
         "enableUserTheming": false
@@ -729,7 +719,7 @@
         "settingsPanelMode": "attached",
         "settingsPanelSideBarCardStyle": false,
         "tooltipsEnabled": true,
-        "translucentWidgets": true
+        "translucentWidgets": false
     },
     "wallpaper": {
         "automationEnabled": false,
@@ -744,7 +734,7 @@
         "linkLightAndDarkWallpapers": true,
         "monitorDirectories": [
         ],
-        "overviewBlur": 0.4,
+        "overviewBlur": 0.89,
         "overviewEnabled": true,
         "overviewTint": 0.6,
         "panelPosition": "follow_bar",
@@ -762,13 +752,13 @@
         "useOriginalImages": true,
         "useSolidColor": false,
         "useWallhaven": false,
-        "viewMode": "single",
-        "wallhavenApiKey": "",
-        "wallhavenCategories": "111",
+        "viewMode": "recursive",
+        "wallhavenApiKey": "2VrEszLGWn4B3sV59SD3A1vXIVRMlz2b",
+        "wallhavenCategories": "010",
         "wallhavenOrder": "desc",
         "wallhavenPurity": "100",
         "wallhavenQuery": "",
-        "wallhavenRatios": "",
+        "wallhavenRatios": "landscape",
         "wallhavenResolutionHeight": "",
         "wallhavenResolutionMode": "atleast",
         "wallhavenResolutionWidth": "",

@@ -3,6 +3,7 @@ input {
         xkb {
             layout "us,ru"
             options "grp:win_space_toggle,compose:ralt,ctrl:nocaps"
+            // options "grp:win_space_toggle,compose:ralt"
         }
 
         // numlock
@@ -31,10 +32,11 @@ binds {
     Mod+1                   hotkey-overlay-title="<span foreground='cyan'>[ LAUNCH ]</span> Zen"                                { spawn-sh "gio launch ~/.local/share/applications/zen.desktop"; }
     Mod+2                   hotkey-overlay-title="<span foreground='cyan'>[ LAUNCH ]</span> Telegram"                           { spawn-sh "gio launch ~/.local/share/applications/org.telegram.desktop.desktop"; }
     Mod+3                   hotkey-overlay-title="<span foreground='cyan'>[ LAUNCH ]</span> Spotify"                            { spawn-sh "gio launch /usr/share/applications/spotify-launcher.desktop"; }
-    Mod+4                   hotkey-overlay-title="<span foreground='cyan'>[ LAUNCH ]</span> Anytype"                            { spawn-sh "gio launch ~/.local/share/applications/anytype.desktop"; }
-    Mod+5                   hotkey-overlay-title="<span foreground='cyan'>[ LAUNCH ]</span> OnlyOffice"                         { spawn-sh "gio launch /usr/share/applications/onlyoffice-desktopeditors.desktop NewDocument"; }
+    Mod+4                   hotkey-overlay-title="<span foreground='cyan'>[ LAUNCH ]</span> Anytype"                            { spawn-sh "gio launch ~/.local/share/applications/io.anytype.anytype.desktop"; }
+    Mod+5                   hotkey-overlay-title="<span foreground='cyan'>[ LAUNCH ]</span> OnlyOffice"                         { spawn-sh "gio launch /usr/share/applications/org.onlyoffice.desktopeditors.desktop NewDocument"; }
     Mod+6                   hotkey-overlay-title="<span foreground='cyan'>[ LAUNCH ]</span> Steam"                              { spawn-sh "gio launch /usr/share/applications/steam.desktop"; }
     Mod+7                   hotkey-overlay-title="<span foreground='cyan'>[ LAUNCH ]</span> Zed"                                { spawn-sh "gio launch ~/.local/share/applications/dev.zed.Zed.desktop"; }
+    Mod+8                   hotkey-overlay-title="<span foreground='cyan'>[ LAUNCH ]</span> Vesktop (Discord)"                  { spawn-sh "gio launch /usr/share/applications/vesktop.desktop"; }
     Mod+Alt+0               hotkey-overlay-title="<span foreground='cyan'>[ LAUNCH ]</span> HAPP"                               { spawn-sh "gio launch /usr/share/applications/Happ.desktop"; }
     Mod+0                   hotkey-overlay-title="<span foreground='cyan'>[ LAUNCH ]</span> Throne"                             { spawn-sh "gio launch /usr/share/applications/Throne.desktop"; }
 
@@ -42,7 +44,8 @@ binds {
 
     Mod+D                   hotkey-overlay-title="<span foreground='gold'>[ ESSENTIAL ]</span> Application menu"                { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
     Mod+V                   hotkey-overlay-title="<span foreground='gold'>[ ESSENTIAL ]</span> Clipboard"                       { spawn-sh "qs -c noctalia-shell ipc call launcher clipboard"; }
-    Mod+T                   hotkey-overlay-title="<span foreground='gold'>[ ESSENTIAL ]</span> Terminal"                        { spawn "kitty"; }
+    Mod+T                   hotkey-overlay-title="<span foreground='gold'>[ ESSENTIAL ]</span> Terminal (kitty)"                { spawn "kitty"; }
+    Mod+Alt+T               hotkey-overlay-title="<span foreground='gold'>[ ESSENTIAL ]</span> Terminal (alacritty)"            { spawn "alacritty"; }
     Mod+P                   hotkey-overlay-title="<span foreground='gold'>[ ESSENTIAL ]</span> Suspend"                         { spawn-sh "qs -c noctalia-shell ipc call sessionMenu lockAndSuspend"; }
     Control+Shift+Escape    hotkey-overlay-title="<span foreground='gold'>[ ESSENTIAL ]</span> Task manager"                    { spawn-sh "pgrep -x btop > /dev/null 2>&1 && killall btop || kitty --class btop --title btop -e btop"; }
 
@@ -60,6 +63,7 @@ binds {
     Mod+B                   hotkey-overlay-title="<span foreground='red'>[ SYSTEM ]</span> Bluetooth"                           { spawn-sh "qs -c noctalia-shell ipc call bluetooth togglePanel"; }
     Mod+N                   hotkey-overlay-title="<span foreground='red'>[ SYSTEM ]</span> Network"                             { spawn-sh "qs -c noctalia-shell ipc call network togglePanel"; }
     Mod+W                   hotkey-overlay-title="<span foreground='red'>[ SYSTEM ]</span> Notifications"                       { spawn-sh "qs -c noctalia-shell ipc call notifications toggleHistory"; }
+    Mod+I                   hotkey-overlay-title="<span foreground='red'>[ SYSTEM ]</span> Noctalia Settings"                   { spawn-sh "qs -c noctalia-shell ipc call settings toggle"; }
 
     // SHORT
 
@@ -74,6 +78,7 @@ binds {
     Mod+F2                  hotkey-overlay-title="<span foreground='green'>[ FIX ]</span> Toggle internal monitor"              { spawn-sh "~/.config/niri/fixes_scripts/edp_disable.sh"; }
     Mod+Alt+F2              hotkey-overlay-title="<span foreground='green'>[ FIX ]</span> Toggle external monitor"              { spawn-sh "~/.config/niri/fixes_scripts/hdmi_disable.sh"; }
     Mod+F3                  hotkey-overlay-title="<span foreground='green'>[ FIX ]</span> Reset position of internal monitor"   { spawn-sh "~/.config/niri/fixes_scripts/position_reset.sh"; }
+    Mod+F4                  hotkey-overlay-title="<span foreground='green'>[ FIX ]</span> Restart Noctalia Shell"               { spawn-sh "notify-send 'Restart Noctalia Shell' 'Restarting shell...'; killall qs; qs -c noctalia-shell >/dev/null 2>&1 & disown"; }
 
     // MEDIA
 
@@ -90,10 +95,10 @@ binds {
     XF86SelectiveScreenshot hotkey-overlay-title="<span foreground='magenta'>[ MEDIA ]</span> Previous track"                   { spawn-sh "qs -c noctalia-shell ipc call media previous"; }
     XF86AudioNext           hotkey-overlay-title="<span foreground='magenta'>[ MEDIA ]</span> Next track"                       { spawn-sh "qs -c noctalia-shell ipc call media next"; }
     XF86LaunchB             hotkey-overlay-title="<span foreground='magenta'>[ MEDIA ]</span> Next track"                       { spawn-sh "qs -c noctalia-shell ipc call media next"; }
-    XF86Assistant           hotkey-overlay-title="<span foreground='magenta'>[ MEDIA ]</span> Play/pause"                       { spawn-sh "qs -c noctalia-shell ipc call media playPause"; }
-    XF86AudioPlay           hotkey-overlay-title="<span foreground='magenta'>[ MEDIA ]</span> Play"                             { spawn-sh "qs -c noctalia-shell ipc call media play"; }
-    XF86AudioStop           hotkey-overlay-title="<span foreground='magenta'>[ MEDIA ]</span> Pause"                            { spawn-sh "qs -c noctalia-shell ipc call media pause"; }
-    XF86AudioPause          hotkey-overlay-title="<span foreground='magenta'>[ MEDIA ]</span> Pause"                            { spawn-sh "qs -c noctalia-shell ipc call media pause"; }
+    XF86Assistant           allow-when-locked=true hotkey-overlay-title="<span foreground='magenta'>[ MEDIA ]</span> Play/pause"{ spawn-sh "qs -c noctalia-shell ipc call media playPause"; }
+    XF86AudioPlay           allow-when-locked=true hotkey-overlay-title="<span foreground='magenta'>[ MEDIA ]</span> Play"      { spawn-sh "qs -c noctalia-shell ipc call media play"; }
+    XF86AudioStop           allow-when-locked=true hotkey-overlay-title="<span foreground='magenta'>[ MEDIA ]</span> Pause"     { spawn-sh "qs -c noctalia-shell ipc call media pause"; }
+    XF86AudioPause          allow-when-locked=true hotkey-overlay-title="<span foreground='magenta'>[ MEDIA ]</span> Pause"     { spawn-sh "qs -c noctalia-shell ipc call media pause"; }
 
     // DEFAULT
 

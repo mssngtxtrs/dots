@@ -1,11 +1,14 @@
 #! /bin/bash
-if [[ $(pgrep swww-daemon) ]] && [[ $(pgrep swaybg) ]]; then
-    killall swww-daemon
-    killall swaybg
+GAMEMODE_FILE="$HOME/.config/gamemode"
+GAMEMODE=$(cat $GAMEMODE_FILE)
+if [[ $GAMEMODE == 0 ]]; then
+    echo 1 > $GAMEMODE_FILE
+    qs -c noctalia-shell ipc call powerProfile enableNoctaliaPerformance
+    niri msg output eDP-1 off
     notify-send "Game mode" "Game mode enabled"
 else 
-    swww-daemon >/dev/null 2>&1 & disown
-    swww restore
-    swaybg --image "/home/mssngtxtrs/.cache/wallpapers/overview/$(swww query | grep -o '[^/]*$')" --mode fill >/dev/null 2>&1 & disown
+    echo 0 > $GAMEMODE_FILE
+    qs -c noctalia-shell ipc call powerProfile disableNoctaliaPerformance
+    niri msg output eDP-1 on 
     notify-send "Game mode" "Game mode disabled"
 fi

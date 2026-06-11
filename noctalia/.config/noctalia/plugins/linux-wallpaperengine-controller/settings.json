@@ -1,0 +1,55 @@
+{
+  "wallpapersFolder": "~/_vault/SteamLibrary/steamapps/workshop/content/431960",
+  "assetsDir": "~/_vault/SteamLibrary/steamapps/common/wallpaper_engine/assets",
+  "iconColor": "none",
+  "enableExtraPropertiesEditor": true,
+  "defaultScaling": "fill",
+  "defaultClamp": "clamp",
+  "defaultFps": 30,
+  "defaultVolume": 100,
+  "defaultMuted": false,
+  "defaultAudioReactiveEffects": true,
+  "defaultNoAutomute": true,
+  "defaultDisableMouse": false,
+  "defaultDisableParallax": false,
+  "applyWallpaperColorsOnApply": false,
+  "wallpaperColorScreenshots": {},
+  "defaultNoFullscreenPause": false,
+  "defaultFullscreenPauseOnlyActive": false,
+  "autoApplyOnStartup": true,
+  "wallpaperScanCacheMinutes": 5,
+  "panelLastSelectedPath": "",
+  "screens": {
+    "eDP-1": {
+      "path": "/home/mssngtxtrs/_vault/SteamLibrary/steamapps/workshop/content/431960/2929438946",
+      "scaling": "fill"
+    }
+  },
+  "wallpaperProperties": {
+    "867739521": {},
+    "1348279970": {},
+    "1527827385": {},
+    "2123356322": {},
+    "2144650372": {},
+    "2302513506": {},
+    "2492504308": {},
+    "2517518192": {},
+    "2522369294": {},
+    "2848552208": {},
+    "2857019530": {},
+    "2879448869": {},
+    "2909964012": {},
+    "2917647542": {},
+    "2929438946": {},
+    "2940997629": {},
+    "2947126653": {},
+    "3053283920": {}
+  },
+  "lastKnownGoodScreens": {
+    "eDP-1": {
+      "path": "/home/mssngtxtrs/_vault/SteamLibrary/steamapps/workshop/content/431960/2929438946",
+      "scaling": "fill"
+    }
+  },
+  "runtimeRecoveryPending": false
+}

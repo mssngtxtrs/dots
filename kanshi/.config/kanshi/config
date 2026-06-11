@@ -15,7 +15,7 @@ output "Samsung Electric Company S24F350 H4ZN911731" {
 
 output "Thermotrex Corporation TL156MDMP31-0 Unknown" {
     mode 3200x2000@120
-    position 0,1080
+    position 0,0
     scale 1.666666
     adaptive_sync on
     alias $INTERNAL
@@ -27,10 +27,10 @@ profile tv {
 }
 
 profile portable {
-    output $INTERNAL enable position 0,0
+    output $INTERNAL enable
 }
 
 profile huge_balls {
-    output $MONITOR_SAMSUNG enable 
+    output $MONITOR_SAMSUNG enable position 1920,0
     output $INTERNAL enable
 }
